@@ -2,7 +2,51 @@
   text-align: center;
 }
 
-.App-logo {
+.loginComponent {
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+  display: block;
+}
+
+.hr-lines::before {
+  content: " ";
+  display: block;
+  height: 1px;
+  width: 130px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background: rgb(185, 185, 185);
+}
+.hr-lines {
+  position: relative;
+  max-width: 500px;
+  margin: 2px auto;
+  text-align: center;
+  color: rgb(121, 121, 121);
+}
+.hr-lines::after {
+  content: " ";
+  display: block;
+  height: 1px;
+  width: 130px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  background: rgb(185, 185, 185);
+}
+
+.style {
+  font-size: 10px;
+  color: rgb(99, 98, 98);
+}
+
+.card_style {
+  margin-top: -180px;
+}
+
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +79,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
