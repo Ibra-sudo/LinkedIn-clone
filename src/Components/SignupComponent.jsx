@@ -1,13 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
+import { signup, signInWithGoogle } from "../Api/firebaseAuth";
+
 import LinkedInLogo from "../assets/LinkedIn_logo.png";
 import LinkedInLogoFooter from "../assets/linkedin-logo-black.png";
 
 function SignupComponent() {
+  const [credentials, setCredentials] = useState({});
+  const signUp = () => {
+    try {
+      let res = signup(credentials.email, credentials.password);
+      if (res) {
+        console.log("Signup successful!");
+      } else {
+        console.log("Signup faild!");
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
   return (
     <>
       {/* --------------Header Section---------------  */}
       <header className="d-block" style={{ margin: "22px 0 0 56px" }}>
-        <a class="navbar-brand" href="#">
+        <a className="navbar-brand" href="#">
           <img src={LinkedInLogo} alt="Bootstrap" width="110" height="65" />
         </a>
       </header>
@@ -21,10 +36,10 @@ function SignupComponent() {
           Make the most of your professional life
         </h2>
         <div
-          class="card position-absolute top-50 start-50 translate-middle shadow border-0 card_style"
+          className="card position-absolute top-50 start-50 translate-middle shadow border-0 card_style"
           style={{ width: "25rem", height: "33rem" }}
         >
-          <div class="card-body m-2">
+          <div className="card-body m-2">
             {/* <div>
               <h1 className="fw-medium">Sign in</h1>
               <p className="fst-normal fs-6">
@@ -32,11 +47,14 @@ function SignupComponent() {
               </p>
             </div> */}
             <form className="needs-validation" action="" noValidate>
-              <label for="floatingInput validEmail">Email</label>
+              <label htmlFor="floatingInput validEmail">Email</label>
               <div className="mb-3">
                 <input
+                  onChange={(e) =>
+                    setCredentials({ ...credentials, email: e.target.value })
+                  }
                   type="email"
-                  className="form-control border-black"
+                  className="form-control border-black input"
                   id="floatingInput validEmail"
                   // name="csrToken"
                   // value=""
@@ -48,13 +66,19 @@ function SignupComponent() {
                   Please enter your email address.
                 </div>
               </div>
-              <label for="floatingPassword validPassword">
+              <label htmlFor="floatingPassword validPassword">
                 Password (6+ characters)
               </label>
               <div className="mb-3">
                 <input
+                  onChange={(e) =>
+                    setCredentials({
+                      ...credentials,
+                      password: e.target.value,
+                    })
+                  }
                   type="password"
-                  className="form-control border-black"
+                  className="form-control border-black input"
                   id="floatingPassword validPassword"
                   // name="csrToken"
                   // value=""
@@ -66,12 +90,21 @@ function SignupComponent() {
               </div>
               <p className="fw-normal text-center justify-content-center px-3 mb-3 style">
                 By clicking Agree & Join, you agree to the LinkedIn{" "}
-                <a href="#">User Agreemet,</a> <a href="#">Privacy Policy,</a>{" "}
-                and <a href="#">Cookie Policy.</a>{" "}
+                <a href="#" className="text-decoration-none">
+                  User Agreemet,
+                </a>{" "}
+                <a href="#" className="text-decoration-none">
+                  Privacy Policy,
+                </a>{" "}
+                and{" "}
+                <a href="#" className="text-decoration-none">
+                  Cookie Policy.
+                </a>{" "}
               </p>
 
               <div className="mb-4 d-grid">
                 <button
+                  onClick={signUp}
                   type="submit"
                   className="btn btn-primary btn-lg rounded-pill fw-normal"
                   style={{ height: "3.5rem" }}
@@ -85,9 +118,12 @@ function SignupComponent() {
             </div>
             <div className="mb-3 d-grid">
               <button
+                onClick={signInWithGoogle}
                 type="submit"
                 className="btn btn-outline-secondary rounded-pill fw-light"
-                style={{ height: "3rem" }}
+                style={{
+                  height: "3rem",
+                }}
               >
                 {/* <i className="flaticon-phone-call"></i> */}
                 <svg
@@ -119,8 +155,8 @@ function SignupComponent() {
             </div>
             <div className="mb-4 d-grid">
               <div className="text-center mt-4">
-                Already on LinkedIn?{" "}
-                <a href="#" className="text-decoration-none">
+                Already on LinkedIn?{"  "}
+                <a href="/" className="text-decoration-none p-2 link">
                   Sign in
                 </a>
               </div>

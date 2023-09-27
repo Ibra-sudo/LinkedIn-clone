@@ -9,6 +9,7 @@ body {
     "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-color: rgba(223, 223, 223, 0.87); */
 }
 
 code {

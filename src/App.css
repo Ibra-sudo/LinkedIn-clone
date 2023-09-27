@@ -1,5 +1,8 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
+  width: 100vw;
+  height: 100vh;
+  background-color: #f4f2ee;
 }
 
 .loginComponent {
@@ -24,7 +27,7 @@
   max-width: 500px;
   margin: 2px auto;
   text-align: center;
-  color: rgb(121, 121, 121);
+  color: rgb(76, 76, 76);
 }
 .hr-lines::after {
   content: " ";
@@ -38,12 +41,55 @@
 }
 
 .style {
-  font-size: 10px;
+  font-size: 12px;
   color: rgb(99, 98, 98);
 }
 
 .card_style {
   margin-top: -180px;
+}
+
+.link:hover {
+  color: blueviolet;
+  padding: 7px;
+  background: rgba(177, 204, 228, 0.5);
+  border-radius: 20px;
+}
+
+.input:hover {
+  border: solid 2px;
+  background-color: rgba(223, 223, 223, 0.47);
+}
+
+.anchorLink {
+  font-size: 12px;
+  font-weight: 370;
+  display: flex;
+  /* margin-bottom: 30px; */
+}
+
+.searchbar {
+  width: 270px;
+  height: 20px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #edf3f8;
+}
+
+/* .searchbar:active {
+  width: 400px;
+  border: solid 1px #0a66c2;
+} */
+
+.searchbar > input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  background-color: #edf3f8;
+  padding-left: 7px;
 }
 
 /* .App-logo {

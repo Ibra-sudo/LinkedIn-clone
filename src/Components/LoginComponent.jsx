@@ -1,4 +1,7 @@
 import React from "react";
+// import { Link } from "react-router-dom";
+import { signInWithGoogle } from "../Api/firebaseAuth";
+
 import LinkedInLogo from "../assets/LinkedIn_logo.png";
 import LinkedInLogoFooter from "../assets/linkedin-logo-black.png";
 
@@ -7,7 +10,7 @@ function LoginComponent() {
     <>
       {/* --------------Header Section---------------  */}
       <header className="d-block" style={{ margin: "22px 0 0 56px" }}>
-        <a class="navbar-brand" href="#">
+        <a className="navbar-brand" href="#">
           <img src={LinkedInLogo} alt="Bootstrap" width="110" height="65" />
         </a>
       </header>
@@ -18,10 +21,10 @@ function LoginComponent() {
         style={{ margin: "0 auto", width: "100vw", height: "81vh" }}
       >
         <div
-          class="card position-absolute top-50 start-50 translate-middle shadow border-0"
+          className="card position-absolute top-50 start-50 translate-middle shadow border-0"
           style={{ width: "22rem", height: "38rem" }}
         >
-          <div class="card-body m-2">
+          <div className="card-body m-2">
             <div>
               <h1 className="fw-medium">Sign in</h1>
               <p className="fst-normal fs-6">
@@ -39,7 +42,7 @@ function LoginComponent() {
                   // placeholder="Email or Phone"
                   required
                 />
-                <label for="floatingInput validEmail">Email or Phone</label>
+                <label htmlFor="floatingInput validEmail">Email or Phone</label>
                 <div className="invalid-feedback">
                   Please enter an email address or phone number.
                 </div>
@@ -54,14 +57,15 @@ function LoginComponent() {
                   // placeholder="Password"
                   required
                 />
-                <label for="floatingPassword validPassword">Password</label>
+                <label htmlFor="floatingPassword validPassword">Password</label>
                 <div className="invalid-feedback">Please enter a password.</div>
               </div>
-              <a href="#" className="d-flex mb-4 text-decoration-none">
+              <a href="#" className="mb-3 text-decoration-none p-2 link">
                 Forget password?
               </a>
-              <div className="mb-4 d-grid">
+              <div className="mt-4 mb-4 d-grid">
                 <button
+                  // onClick={}
                   type="submit"
                   className="btn btn-primary btn-lg rounded-pill fw-bold"
                   style={{ height: "3.5rem" }}
@@ -74,10 +78,16 @@ function LoginComponent() {
               <h6 className="hr-lines">or</h6>
             </div>
             <div className="mb-3 d-grid">
+              {/* <Link
+                className="btn text-center"
+                // style={{ width: "18rem" }}
+                to={{ pathname: "/home" }}
+              > */}
               <button
+                onClick={signInWithGoogle}
                 type="submit"
                 className="btn btn-outline-secondary rounded-pill fw-light"
-                style={{ height: "3rem" }}
+                style={{ height: "3rem", width: "19rem" }}
               >
                 {/* <i className="flaticon-phone-call"></i> */}
                 <svg
@@ -104,8 +114,9 @@ function LoginComponent() {
                     d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"
                   />
                 </svg>
-                <span className="">Continue with Google</span>
+                <span>Continue with Google</span>
               </button>
+              {/* </Link> */}
             </div>
             <div className="mb-4 d-grid">
               <button
@@ -128,8 +139,8 @@ function LoginComponent() {
             </div>
           </div>
           <div className="text-center mt-4">
-            New to LinkedIn?{" "}
-            <a href="#" className="text-decoration-none">
+            New to LinkedIn?
+            <a href="/signup" className="text-decoration-none p-2 link">
               Join now
             </a>
           </div>
