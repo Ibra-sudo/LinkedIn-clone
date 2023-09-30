@@ -21,9 +21,9 @@ import FaviconLogo from "../assets/favicon.png";
 function HomeComponent() {
   return (
     <>
-      <div className="App">
+      <div className="App bg">
         <nav className="navbar navbar-expand-lg bg-white">
-          <div className="container">
+          <div className="container" style={{ height: "3rem" }}>
             <div className="" style={{ width: "3rem" }}>
               <a className="navbar-brand" href="#">
                 <img src={FaviconLogo} alt="" width="47" height="47" />
@@ -52,136 +52,26 @@ function HomeComponent() {
                   />
                 </div>
               </div>
-
-              {/* <button className="btn btn-outline-success" type="submit">
-                Search
-              </button> */}
             </form>
             <div
-              className="collapse navbar-collapse justify-content-end"
-              style={{ height: "3rem" }}
+              className="container collapse navbar-collapse justify-content-end"
+              style={{ height: "4rem" }}
               id="navbarScroll"
             >
-              <ul
-                className="navbar-nav my-2 my-lg-0 navbar-nav-scroll"
-                // style={{"--bs-scroll-height: 100px"}}
-                // style={{ height: "3rem" }}
-              >
-                <li
-                  className="nav-item"
-                  // style={{ width: "70px", height: "10px" }}
+              <div className="container collapse navbar-collapse justify-content-end">
+                <ul
+                  className="navbar-nav my-2 my-lg-0 navbar-nav-scroll align-items-center"
+                  style={{ height: "4rem" }}
                 >
-                  {/* <i class="fa-solid fa-house" style="color: #474747;"></i> */}
-
-                  <a
-                    className="nav-link text-center active"
-                    aria-current="page"
-                    href="#"
-                    // style={{ height: "3rem" }}
-                  >
-                    <div>
-                      <FontAwesomeIcon
-                        icon={faHome}
-                        style={{
-                          color: "#717171",
-                          width: "1.4rem",
-                          height: "1.4rem",
-                        }}
-                      />
-                    </div>
-                    <span className="anchorLink">Home</span>
-                  </a>
-                </li>
-                <li
-                  className="nav-item"
-                  // style={{ width: "120px", height: "80px" }}
-                >
-                  <a className="nav-link text-center" href="#">
-                    <div>
-                      <FontAwesomeIcon
-                        icon={faPeopleGroup}
-                        style={{
-                          color: "#717171",
-                          width: "1.4rem",
-                          height: "1.4rem",
-                        }}
-                      />
-                    </div>
-                    <span className="anchorLink">My Network</span>
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link text-center" aria-disabled="true">
-                    <div>
-                      <FontAwesomeIcon
-                        icon={faBriefcase}
-                        style={{
-                          color: "#717171",
-                          width: "1.4rem",
-                          height: "1.4rem",
-                        }}
-                      />
-                    </div>
-                    <span className="anchorLink">Jobs</span>
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link text-center" aria-disabled="true">
-                    <div>
-                      <FontAwesomeIcon
-                        icon={faCommentDots}
-                        style={{
-                          color: "#717171",
-                          width: "1.4rem",
-                          height: "1.4rem",
-                        }}
-                      />
-                    </div>
-                    <span className="anchorLink">Messaging</span>
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link text-center" aria-disabled="true">
-                    <div>
-                      <FontAwesomeIcon
-                        icon={faBell}
-                        style={{
-                          color: "#717171",
-                          width: "1.4rem",
-                          height: "1.4rem",
-                        }}
-                      />
-                    </div>
-                    <span className="anchorLink">Notification</span>
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link text-center" aria-disabled="true">
-                    <div>
-                      <FontAwesomeIcon
-                        icon={faUser}
-                        style={{
-                          color: "#717171",
-                          width: "1.4rem",
-                          height: "1.4rem",
-                        }}
-                      />
-                    </div>
-                    <span className="anchorLink">Me</span>
-                  </a>
-                </li>
-                <div className="collapse navbar-collapse" id="navbarScroll">
-                  <li className="nav-item dropdown">
+                  <li className="nav-item text-center px-3">
                     <a
-                      className="nav-link text-center dropdown-toggle"
+                      className="nav-link  active"
+                      aria-current="page"
                       href="#"
-                      role="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
                     >
-                      <div>
+                      <div className="" style={{ height: "21px" }}>
                         <FontAwesomeIcon
-                          icon={faGrip}
+                          icon={faHome}
                           style={{
                             color: "#717171",
                             width: "1.4rem",
@@ -189,40 +79,147 @@ function HomeComponent() {
                           }}
                         />
                       </div>
-                      <span className="anchorLink">For Business</span>
+                      <span className="anchorLink">Home</span>
                     </a>
-                    <ul className="dropdown-menu">
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Action
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Another action
-                        </a>
-                      </li>
-                      <li>
-                        <hr className="dropdown-divider" />
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Something else here
-                        </a>
-                      </li>
-                    </ul>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" aria-disabled="true">
-                      <span className="anchorLink">
-                        Get hired faster. Try Premium free.
+                    <a className="nav-link text-center" href="#">
+                      <div style={{ height: "21px" }}>
+                        <FontAwesomeIcon
+                          icon={faPeopleGroup}
+                          style={{
+                            color: "#717171",
+                            width: "1.4rem",
+                            height: "1.4rem",
+                          }}
+                        />
+                      </div>
+                      <span className="anchorLink" style={{ width: "68px" }}>
+                        My Network
                       </span>
                     </a>
                   </li>
-                </div>
-              </ul>
+                  <li className="nav-item px-3">
+                    <a className="nav-link text-center" href="#">
+                      <div style={{ height: "21px" }}>
+                        <FontAwesomeIcon
+                          icon={faBriefcase}
+                          style={{
+                            color: "#717171",
+                            width: "1.4rem",
+                            height: "1.4rem",
+                          }}
+                        />
+                      </div>
+                      <span className="anchorLink">Jobs</span>
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link text-center" href="#">
+                      <div style={{ height: "21px" }}>
+                        <FontAwesomeIcon
+                          icon={faCommentDots}
+                          style={{
+                            color: "#717171",
+                            width: "1.4rem",
+                            height: "1.4rem",
+                          }}
+                        />
+                      </div>
+                      <span className="anchorLink">Messaging</span>
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link text-center" href="#">
+                      <div style={{ height: "21px" }}>
+                        <FontAwesomeIcon
+                          icon={faBell}
+                          style={{
+                            color: "#717171",
+                            width: "1.4rem",
+                            height: "1.4rem",
+                          }}
+                        />
+                      </div>
+                      <span className="anchorLink">Notification</span>
+                    </a>
+                  </li>
+                  <li className="nav-item px-3">
+                    <a className="nav-link text-center" href="#">
+                      <div style={{ height: "20px" }}>
+                        <FontAwesomeIcon
+                          icon={faUser}
+                          style={{
+                            color: "#717171",
+                            width: "1.3rem",
+                            height: "1.3rem",
+                          }}
+                        />
+                      </div>
+                      <span className="anchorLink px-1">Me</span>
+                    </a>
+                  </li>
+                  <div
+                    className="container collapse navbar-collapse"
+                    id="navbarScroll"
+                    style={{ height: "4rem" }}
+                  >
+                    <li className="nav-item dropdown pt-3">
+                      <a
+                        className="nav-link text-center dropdown-toggle"
+                        href="#"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <div style={{ height: "21px" }}>
+                          <FontAwesomeIcon
+                            icon={faGrip}
+                            style={{
+                              color: "#717171",
+                              width: "1.4rem",
+                              height: "1.4rem",
+                            }}
+                          />
+                        </div>
+                        <span className="anchorLink">For Business</span>
+                      </a>
+                      <ul className="dropdown-menu">
+                        <li>
+                          <a className="dropdown-item" href="#">
+                            Action
+                          </a>
+                        </li>
+                        <li>
+                          <a className="dropdown-item" href="#">
+                            Another action
+                          </a>
+                        </li>
+                        <li>
+                          <hr className="dropdown-divider" />
+                        </li>
+                        <li>
+                          <a className="dropdown-item" href="#">
+                            Something else here
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li className="nav-item pt-1">
+                      <a className="nav-link" href="#">
+                        <span
+                          className="anchorLink text-center"
+                          style={{ width: "100px" }}
+                        >
+                          Get hired faster. Try Premium free.
+                        </span>
+                      </a>
+                    </li>
+                  </div>
+                </ul>
+              </div>
             </div>
-            <button
+            {/* <button
               className="navbar-toggler"
               type="button"
               data-bs-toggle="collapse"
@@ -232,9 +229,42 @@ function HomeComponent() {
               aria-label="Toggle navigation"
             >
               <span className="navbar-toggler-icon"></span>
-            </button>
+            </button> */}
           </div>
         </nav>
+        <div class="container text-center" style={{ marginTop: "-15px" }}>
+          <div class="row" style={{ justifyContent: "space-evenly" }}>
+            <div
+              class="col-md-2 bg-white "
+              style={{
+                height: "200px",
+                width: "230px",
+                borderRadius: "10px",
+              }}
+            >
+              1 of 3
+            </div>
+            <div
+              class="col-md-6 bg-white p-3"
+              style={{
+                height: "300px",
+                width: "670px",
+                borderRadius: "10px",
+              }}
+            >
+              2 of 3 (wider)
+            </div>
+            <div
+              class="col-md-3 d-none d-lg-block bg-white"
+              style={{
+                height: "400px",
+                borderRadius: "10px",
+              }}
+            >
+              3 of 3
+            </div>
+          </div>
+        </div>
       </div>
     </>
     // <div>
