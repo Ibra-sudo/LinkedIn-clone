@@ -94,7 +94,7 @@ function SignupComponent() {
                     Please enter a password.
                   </div>
                 </div>
-                <p className="fw-normal text-center justify-content-center px-3 mb-3 style">
+                <p className="fw-normal text-center justify-content-center px-3 mb-3 p-signIn-style">
                   By clicking Agree & Join, you agree to the LinkedIn{" "}
                   <a href="#" className="text-decoration-none">
                     User Agreemet,
@@ -172,20 +172,30 @@ function SignupComponent() {
         </main>
 
         {/* -------------- Footer Section ---------------  */}
-        <footer className="justify-content-center bg-white position-sticky">
-          <div
-            className="container d-flex justify-content-center"
-            style={{ width: "100%", height: "30px" }}
-          >
-            <div>
-              <em className="text-black fw-light">
-                <img src={LinkedInLogoFooter} alt="" width="60" height="15" /> ©
-                2023
-              </em>
-            </div>
-            <div className="text-center">
-              <ul className="d-flex gap-3">
-                <li className="list-group">
+        <footer className="justify-content-center bg-white">
+          <div className="d-flex text-center justify-content-center">
+            <div className=" text-center justify-content-center">
+              {/* <em className="text-black footer"> */}
+              {/* <img src={LinkedInLogoFooter} alt="" width="60" height="15" /> ©
+              2023 */}
+
+              {/* </em> */}
+              <ul className="gap-3 mt-2 me-4 ul-footer">
+                <li className="list-group li-footer">
+                  <a
+                    href="#"
+                    className="text-decoration-none text-black fw-light"
+                  >
+                    <img
+                      src={LinkedInLogoFooter}
+                      alt=""
+                      width="60"
+                      height="15"
+                    />{" "}
+                    © 2023
+                  </a>
+                </li>
+                <li className="list-group li-footer">
                   <a
                     href="#"
                     className="text-decoration-none text-black fw-light"
@@ -193,7 +203,7 @@ function SignupComponent() {
                     User Agreement
                   </a>
                 </li>
-                <li className="list-group">
+                <li className="list-group li-footer">
                   <a
                     href="#"
                     className="text-decoration-none text-black fw-light"
@@ -201,7 +211,7 @@ function SignupComponent() {
                     Privacy Policy
                   </a>
                 </li>
-                <li className="list-group ">
+                <li className="list-group li-footer">
                   <a
                     href="#"
                     className="text-decoration-none text-black fw-light"
@@ -209,7 +219,7 @@ function SignupComponent() {
                     Community Guidelines
                   </a>
                 </li>
-                <li className="list-group ">
+                <li className="list-group li-footer">
                   <a
                     href="#"
                     className="text-decoration-none text-black fw-light"
@@ -217,7 +227,7 @@ function SignupComponent() {
                     Cookie Policy
                   </a>
                 </li>
-                <li className="list-group ">
+                <li className="list-group li-footer">
                   <a
                     href="#"
                     className="text-decoration-none text-black fw-light"
@@ -225,7 +235,7 @@ function SignupComponent() {
                     Copyright Policy
                   </a>
                 </li>
-                <li className="list-group ">
+                <li className="list-group li-footer">
                   <a
                     href="#"
                     className="text-decoration-none text-black fw-light"
@@ -233,7 +243,13 @@ function SignupComponent() {
                     Send Feedback
                   </a>
                 </li>
-                <li className="list-group">
+                <li className="list-group li-footer">
+                  <a
+                    href="#"
+                    className="text-decoration-none text-black fw-light"
+                  >
+                    Language
+                  </a>
                   <div className="">
                     <div>
                       {/* <ul>
@@ -320,7 +336,7 @@ function SignupComponent() {
                     {/* <button>
                   <span>Language</span>
                   <i></i>
-                </button> */}
+                  </button> */}
                   </div>
                 </li>
               </ul>

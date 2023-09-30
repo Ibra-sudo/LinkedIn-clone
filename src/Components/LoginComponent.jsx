@@ -155,72 +155,82 @@ function LoginComponent() {
           </a>
         </div>
         {/* -------------- Footer Section ---------------  */}
-        <footer
-          className=" justify-content-center bg-white position-sticky footer"
-          // style={{ width: "100%", height: "30px", marginTop: "270px" }}
-        >
-          <div
-            className="container d-flex justify-content-center"
-            style={{ width: "100%" }}
-          >
-            <div className="text-center d-flex">
-              <em className="text-black fw-light">
-                <img src={LinkedInLogoFooter} alt="" width="60" height="15" /> ©
-                2023
-              </em>
-              <ul className="d-flex gap-3">
-                <li className="list-group">
-                  <a
-                    href="#"
-                    className="text-decoration-none text-black fw-light"
-                  >
-                    User Agreement
-                  </a>
-                </li>
-                <li className="list-group">
-                  <a
-                    href="#"
-                    className="text-decoration-none text-black fw-light"
-                  >
-                    Privacy Policy
-                  </a>
-                </li>
-                <li className="list-group ">
-                  <a
-                    href="#"
-                    className="text-decoration-none text-black fw-light"
-                  >
-                    Community Guidelines
-                  </a>
-                </li>
-                <li className="list-group ">
-                  <a
-                    href="#"
-                    className="text-decoration-none text-black fw-light"
-                  >
-                    Cookie Policy
-                  </a>
-                </li>
-                <li className="list-group ">
-                  <a
-                    href="#"
-                    className="text-decoration-none text-black fw-light"
-                  >
-                    Copyright Policy
-                  </a>
-                </li>
-                <li className="list-group ">
-                  <a
-                    href="#"
-                    className="text-decoration-none text-black fw-light"
-                  >
-                    Send Feedback
-                  </a>
-                </li>
-                <li className="list-group">
-                  <div className="">
-                    <div>
-                      {/* <ul>
+        <footer className=" bg-white">
+          <div className="d-flex text-center justify-content-center">
+            {/* <div className=" "> */}
+            {/* <em className="text-black footer"> */}
+            {/* <img src={LinkedInLogoFooter} alt="" width="60" height="15" /> ©
+              2023 */}
+
+            {/* </em> */}
+            <ul className="gap-2 mt-2 me-4 ul-footer">
+              <li className="list-group li-footer">
+                <a
+                  href="#"
+                  className="text-decoration-none text-black fw-light"
+                >
+                  <img src={LinkedInLogoFooter} alt="" width="60" height="15" />{" "}
+                  © 2023
+                </a>
+              </li>
+              <li className="list-group li-footer">
+                <a
+                  href="#"
+                  className="text-decoration-none text-black fw-light"
+                >
+                  User Agreement
+                </a>
+              </li>
+              <li className="list-group li-footer">
+                <a
+                  href="#"
+                  className="text-decoration-none text-black fw-light"
+                >
+                  Privacy Policy
+                </a>
+              </li>
+              <li className="list-group li-footer">
+                <a
+                  href="#"
+                  className="text-decoration-none text-black fw-light"
+                >
+                  Community Guidelines
+                </a>
+              </li>
+              <li className="list-group li-footer">
+                <a
+                  href="#"
+                  className="text-decoration-none text-black fw-light"
+                >
+                  Cookie Policy
+                </a>
+              </li>
+              <li className="list-group li-footer">
+                <a
+                  href="#"
+                  className="text-decoration-none text-black fw-light"
+                >
+                  Copyright Policy
+                </a>
+              </li>
+              <li className="list-group li-footer">
+                <a
+                  href="#"
+                  className="text-decoration-none text-black fw-light"
+                >
+                  Send Feedback
+                </a>
+              </li>
+              <li className="list-group li-footer">
+                <a
+                  href="#"
+                  className="text-decoration-none text-black fw-light"
+                >
+                  Language
+                </a>
+                <div className="">
+                  <div>
+                    {/* <ul>
                     <li>
                       <button>العربية (Arabic)</button>
                     </li>
@@ -300,15 +310,15 @@ function LoginComponent() {
                       <button></button>
                     </li>
                   </ul> */}
-                    </div>
-                    {/* <button>
+                  </div>
+                  {/* <button>
                   <span>Language</span>
                   <i></i>
-                </button> */}
-                  </div>
-                </li>
-              </ul>
-            </div>
+                  </button> */}
+                </div>
+              </li>
+            </ul>
+            {/* </div> */}
           </div>
         </footer>
       </div>
