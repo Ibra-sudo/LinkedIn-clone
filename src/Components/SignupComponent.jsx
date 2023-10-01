@@ -6,6 +6,7 @@ import LinkedInLogoFooter from "../assets/linkedin-logo-black.png";
 
 function SignupComponent() {
   const [credentials, setCredentials] = useState({});
+  // Signup function
   const signUp = () => {
     try {
       let res = signup(credentials.email, credentials.password);
