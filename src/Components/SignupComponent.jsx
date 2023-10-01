@@ -40,10 +40,10 @@ function SignupComponent() {
           style={{ height: "84.1%" }}
         >
           <div
-            className="card shadow border-0"
-            style={{ width: "25rem", height: "28.4rem" }}
+            className=" card-shadow"
+            style={{ width: "23rem", height: "28.4rem" }}
           >
-            <div className="card-body">
+            <div className="card-body p-2">
               {/* <div>
                 <h1 className="fw-medium">Sign in</h1>
                 <p className="fst-normal fs-6">

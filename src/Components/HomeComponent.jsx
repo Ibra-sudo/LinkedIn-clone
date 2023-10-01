@@ -22,53 +22,69 @@ function HomeComponent() {
   return (
     <>
       <div className="App bg">
-        <nav className="navbar navbar-expand-lg bg-white">
-          <div className="container" style={{ height: "3rem" }}>
-            <div className="" style={{ width: "3rem" }}>
-              <a className="navbar-brand" href="#">
-                <img src={FaviconLogo} alt="" width="47" height="47" />
-              </a>
-            </div>
-
-            <form className="" role="search">
-              <div className="">
-                <div className="d-flex searchbar">
-                  <div className="d-flex align-items-center ">
-                    <FontAwesomeIcon
-                      icon={faMagnifyingGlass}
-                      style={{
-                        color: "#717171",
-                        width: "1rem",
-                        height: "1rem",
-                      }}
-                    />
-                  </div>
-                  <input
-                    className=""
-                    type="search"
-                    placeholder="Search"
-                    aria-label="Search"
-                    style={{ height: "2.2rem" }}
-                  />
-                </div>
+        <header className="">
+          <div className="p-2 d-flex bg-white">
+            <a className="ms-3" href="#">
+              <img src={FaviconLogo} alt="" width="47" height="47" />
+            </a>
+            {/* <form className="" role="search"> */}
+            {/* <div className=""> */}
+            <div className=" searchbar">
+              <div className="d-flex align-items-center ">
+                <FontAwesomeIcon
+                  icon={faMagnifyingGlass}
+                  style={{
+                    color: "#717171",
+                    width: "1rem",
+                    height: "1rem",
+                  }}
+                />
               </div>
-            </form>
-            <div
-              className="container collapse navbar-collapse justify-content-end"
-              style={{ height: "4rem" }}
-              id="navbarScroll"
-            >
-              <div className="container collapse navbar-collapse justify-content-end">
+              <input
+                className=""
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+                style={{ height: "2.2rem" }}
+              />
+            </div>
+            {/* </div> */}
+            {/* </form> */}
+            <nav className="d-flex bg-white">
+              <div className=" " style={{ height: "3rem", width: "100%" }}>
+                {/* <div
+                  // collapse navbar-collapse
+                  className="container d-flex "
+                  // style={{ height: "4rem" }}
+                  // id="navbarScroll"
+                > */}
+                {/* <div className="container d- justify-content-end"> */}
                 <ul
-                  className="navbar-nav my-2 my-lg-0 navbar-nav-scroll align-items-center"
-                  style={{ height: "4rem" }}
+                  className="align-items-center ul-nav"
+                  style={{ height: "2.8rem", width: "100%" }}
+                  // style={{ width: "100%" }}
                 >
-                  <li className="nav-item text-center px-3">
+                  <li className="list-group text-center search-icon li-nav">
                     <a
-                      className="nav-link  active"
-                      aria-current="page"
+                      className="nav-link "
+                      // aria-current="page"
                       href="#"
                     >
+                      <div className="" style={{ height: "21px" }}>
+                        <FontAwesomeIcon
+                          icon={faMagnifyingGlass}
+                          style={{
+                            color: "#717171",
+                            width: "1.2rem",
+                            height: "1.2rem",
+                          }}
+                        />
+                      </div>
+                      <span className="anchorLink">Search</span>
+                    </a>
+                  </li>
+                  <li className="list-group text-center li-nav">
+                    <a className="nav-link active" aria-current="page" href="#">
                       <div className="" style={{ height: "21px" }}>
                         <FontAwesomeIcon
                           icon={faHome}
@@ -82,7 +98,7 @@ function HomeComponent() {
                       <span className="anchorLink">Home</span>
                     </a>
                   </li>
-                  <li className="nav-item">
+                  <li className="list-group li-nav">
                     <a className="nav-link text-center" href="#">
                       <div style={{ height: "21px" }}>
                         <FontAwesomeIcon
@@ -94,12 +110,15 @@ function HomeComponent() {
                           }}
                         />
                       </div>
-                      <span className="anchorLink" style={{ width: "68px" }}>
+                      <span
+                        className="anchorLink"
+                        // style={{ width: "68px" }}
+                      >
                         My Network
                       </span>
                     </a>
                   </li>
-                  <li className="nav-item px-3">
+                  <li className="list-group li-nav">
                     <a className="nav-link text-center" href="#">
                       <div style={{ height: "21px" }}>
                         <FontAwesomeIcon
@@ -114,7 +133,7 @@ function HomeComponent() {
                       <span className="anchorLink">Jobs</span>
                     </a>
                   </li>
-                  <li className="nav-item">
+                  <li className="list-group li-nav">
                     <a className="nav-link text-center" href="#">
                       <div style={{ height: "21px" }}>
                         <FontAwesomeIcon
@@ -129,7 +148,7 @@ function HomeComponent() {
                       <span className="anchorLink">Messaging</span>
                     </a>
                   </li>
-                  <li className="nav-item">
+                  <li className="list-group li-nav">
                     <a className="nav-link text-center" href="#">
                       <div style={{ height: "21px" }}>
                         <FontAwesomeIcon
@@ -144,7 +163,7 @@ function HomeComponent() {
                       <span className="anchorLink">Notification</span>
                     </a>
                   </li>
-                  <li className="nav-item px-3">
+                  <li className="list-group li-nav">
                     <a className="nav-link text-center" href="#">
                       <div style={{ height: "20px" }}>
                         <FontAwesomeIcon
@@ -160,11 +179,11 @@ function HomeComponent() {
                     </a>
                   </li>
                   <div
-                    className="container collapse navbar-collapse"
+                    className="d-flex"
                     id="navbarScroll"
-                    style={{ height: "4rem" }}
+                    style={{ height: "1.6rem" }}
                   >
-                    <li className="nav-item dropdown pt-3">
+                    <li className="list-group dropdown li-nav">
                       <a
                         className="nav-link text-center dropdown-toggle"
                         href="#"
@@ -205,11 +224,11 @@ function HomeComponent() {
                         </li>
                       </ul>
                     </li>
-                    <li className="nav-item pt-1">
+                    <li className="list-group li-nav">
                       <a className="nav-link" href="#">
                         <span
                           className="anchorLink text-center"
-                          style={{ width: "100px" }}
+                          // style={{ width: "100px" }}
                         >
                           Get hired faster. Try Premium free.
                         </span>
@@ -217,9 +236,9 @@ function HomeComponent() {
                     </li>
                   </div>
                 </ul>
-              </div>
-            </div>
-            {/* <button
+                {/* </div> */}
+                {/* </div> */}
+                {/* <button
               className="navbar-toggler"
               type="button"
               data-bs-toggle="collapse"
@@ -230,25 +249,28 @@ function HomeComponent() {
             >
               <span className="navbar-toggler-icon"></span>
             </button> */}
+              </div>
+            </nav>
           </div>
-        </nav>
-        <div class="container text-center" style={{ marginTop: "-15px" }}>
+        </header>
+        <div></div>
+        {/* <div class="container text-center" style={{ marginTop: "-15px" }}>
           <div class="row" style={{ justifyContent: "space-evenly" }}>
             <div
-              class="col-md-2 bg-white "
+              class="col-md-2 mb-5 bg-white "
               style={{
-                height: "200px",
-                width: "230px",
+                height: "390px",
+                // width: "230px",
                 borderRadius: "10px",
               }}
             >
               1 of 3
             </div>
             <div
-              class="col-md-6 bg-white p-3"
+              class="col-md-6 bg-white"
               style={{
-                height: "300px",
-                width: "670px",
+                height: "120px",
+                // width: "670px",
                 borderRadius: "10px",
               }}
             >
@@ -264,21 +286,9 @@ function HomeComponent() {
               3 of 3
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
-    // <div>
-    //   <Link className="text-white text-decoration-none" to={{ pathname: "/" }}>
-    //     <button
-    //       // onClick={signout}
-    //       type="submit"
-    //       className="btn btn-primary btn-lg rounded-pill fw-bold"
-    //       style={{ height: "3.5rem" }}
-    //     >
-    //       Log out
-    //     </button>
-    //   </Link>
-    // </div>
   );
 }
 

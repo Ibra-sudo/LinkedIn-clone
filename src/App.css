@@ -72,30 +72,32 @@
   font-size: 12px;
   font-weight: 370;
   display: flex;
+  /* margin: 0 10px 0 10px; */
 }
 
 .searchbar {
-  width: 270px;
-  height: 20px;
+  width: 290px;
+  height: 25px;
   border-radius: 4px;
   display: flex;
   align-items: center;
   padding: 20px;
   background-color: #edf3f8;
+  margin-top: 4px;
 }
 
 .searchbar > input {
   flex: 1;
   border: none;
   outline: none;
-  font-size: 18px;
+  font-size: 15px;
   background-color: #edf3f8;
   padding-left: 7px;
 }
 
 @media (min-width: 250px) {
   .ul-footer {
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -103,6 +105,19 @@
   .li-footer {
     flex: 0 0 50%;
     max-width: 47%;
+  }
+  .card-shadow {
+    box-shadow: none;
+  }
+  .searchbar {
+    display: none;
+  }
+  .anchorLink {
+    display: none;
+  }
+  .ul-nav {
+    display: flex;
+    gap: 29px;
   }
 }
 
@@ -117,6 +132,21 @@
     flex: 0 0 50%;
     max-width: 22%;
   }
+  .card-shadow {
+    box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+  }
+  .searchbar {
+    display: none;
+  }
+  .anchorLink {
+    display: none;
+  }
+  .ul-nav {
+    display: flex;
+    gap: 40px;
+    margin-left: 30px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -129,6 +159,19 @@
   .li-footer {
     flex: 0 50%;
     max-width: 16%;
+  }
+  .card-shadow {
+    box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+  }
+  .searchbar {
+    display: none;
+  }
+  .anchorLink {
+    display: flex;
+  }
+  .ul-style {
+    gap: 15px;
   }
 }
 
@@ -143,6 +186,19 @@
     flex: 0 50%;
     max-width: 15%;
   }
+  .card-shadow {
+    box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+  }
+  .searchbar {
+    display: flex;
+  }
+  .anchorLink {
+    display: flex;
+  }
+  .search-icon {
+    display: none;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -156,6 +212,16 @@
     flex: 0 0 50%;
     max-width: 12%;
   }
+  .card-shadow {
+    box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+  }
+  .searchbar {
+    display: flex;
+  }
+  .anchorLink {
+    display: flex;
+  }
 }
 
 @media (min-width: 1400px) {
@@ -168,5 +234,15 @@
   .li-footer {
     flex: 0 0 50%;
     max-width: 17%;
+  }
+  .card-shadow {
+    box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+  }
+  .searchbar {
+    display: flex;
+  }
+  .anchorLink {
+    display: flex;
   }
 }

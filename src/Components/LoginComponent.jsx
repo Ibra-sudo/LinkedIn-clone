@@ -22,10 +22,10 @@ function LoginComponent() {
           style={{ height: "88%" }}
         >
           <div
-            className="card shadow border-0"
+            className="card-shadow"
             style={{ width: "22rem", height: "35rem" }}
           >
-            <div className="card-body my-3">
+            <div className="card-body mt-4 mx-1">
               <div>
                 <h1 className="fw-medium fs-2">Sign in</h1>
                 <p className="fst-normal fs-6">
