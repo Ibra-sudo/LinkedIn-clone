@@ -72,6 +72,7 @@
   font-size: 12px;
   font-weight: 370;
   display: flex;
+  color: gray;
   /* margin: 0 10px 0 10px; */
 }
 
@@ -94,10 +95,43 @@
   background-color: #edf3f8;
   padding-left: 7px;
 }
+
 .nav-user {
   width: 26px;
   height: 26px;
   border-radius: 50%;
+}
+
+.nav-user-dropdown {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+
+.dropdown-section {
+  display: flex;
+  flex: 1;
+  padding: 5px;
+}
+
+.dropdown-section h5 {
+  /* width: 180px; */
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: -1px;
+}
+
+.dropdown-section p {
+  width: 180px;
+  font-weight: 350;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+li:hover .nav-span,
+li:hover svg {
+  color: black;
+  fill: black;
 }
 
 @media (min-width: 250px) {
@@ -175,6 +209,11 @@
   .anchorLink {
     display: flex;
   }
+  .ul-nav {
+    display: flex;
+    margin-left: 15px;
+    gap: 30px;
+  }
   .nav-work-icon {
     height: 2.4rem;
   }
@@ -209,7 +248,8 @@
   }
   .ul-nav {
     display: flex;
-    margin-left: 75px;
+    margin-left: 85px;
+    gap: 25px;
   }
   .nav-work-icon {
     height: 2.4rem;
@@ -240,6 +280,7 @@
   .ul-nav {
     display: flex;
     margin-left: 90px;
+    gap: 30px;
   }
   .home-logo {
     margin-left: 120px;
@@ -273,6 +314,7 @@
   .ul-nav {
     display: flex;
     margin-left: 80px;
+    gap: 30px;
   }
   .home-logo {
     margin-left: 290px;
