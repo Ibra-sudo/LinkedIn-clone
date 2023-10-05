@@ -134,6 +134,50 @@ li:hover svg {
   fill: black;
 }
 
+.business-p {
+  font-size: 13px;
+  color: gray;
+  margin-top: -10px;
+}
+
+.business-h3 {
+  font-size: 14px;
+  margin-top: -6px;
+}
+
+.business-span {
+  font-size: 13px;
+  color: gray;
+  width: 40px;
+}
+
+.align {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.business-a:hover {
+  box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 17px;
+}
+
+.explore-li:hover {
+  text-decoration: underline;
+}
+
+.business-height {
+  height: 100vh;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  right: 0;
+}
+.overflow {
+  overflow-y: scroll;
+  height: 77vh;
+  overflow: auto;
+}
+
 @media (min-width: 250px) {
   .ul-footer {
     display: none;
@@ -313,13 +357,66 @@ li:hover svg {
   }
   .ul-nav {
     display: flex;
-    margin-left: 80px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    /* display: flex; */
+    margin-left: 120px;
     gap: 30px;
   }
   .home-logo {
-    margin-left: 290px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 150px;
+    flex: 0 0 50%;
+    max-width: 3%;
   }
   .nav-work-icon {
     height: 2.4rem;
   }
 }
+
+/* @media (min-width: 1600px) {
+  .ul-footer {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .li-footer {
+    flex: 0 0 50%;
+    max-width: 17%;
+  }
+  .card-shadow {
+    box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+  }
+  .searchbar {
+    display: flex;
+  }
+  .anchorLink {
+    display: flex;
+  }
+  .ul-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: -180px;
+    gap: 30px;
+  }
+  .home-logo {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    flex: 0 0 50%;
+    max-width: 3%;
+  }
+  .nav-work-icon {
+    height: 2.4rem;
+  }
+} */

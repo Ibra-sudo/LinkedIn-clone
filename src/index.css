@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  overflow-y: scroll;
+  overflow-y: hidden;
   overflow-x: hidden;
   font-family: -apple-system, system-ui, "system-ui", "Segoe UI", Roboto,
     "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell,
