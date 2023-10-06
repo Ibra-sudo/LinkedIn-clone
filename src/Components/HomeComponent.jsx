@@ -20,6 +20,10 @@ import FaviconLogo from "../assets/favicon.png";
 
 function HomeComponent() {
   const [isHidden, setIsHidden] = useState(false);
+
+  {
+    /* ------------ Toggle function -------------  */
+  }
   const toggler = () => {
     setIsHidden(!isHidden);
   };

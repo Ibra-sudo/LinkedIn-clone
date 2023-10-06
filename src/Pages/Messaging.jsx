@@ -4,7 +4,9 @@ import FaviconLogo from "../assets/favicon.png";
 
 function Messaging() {
   const [isHidden, setIsHidden] = useState(false);
-
+  {
+    /* -------------- Toggle function ---------------  */
+  }
   const toggler = () => {
     setIsHidden(!isHidden);
   };
