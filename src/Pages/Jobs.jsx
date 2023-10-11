@@ -4,11 +4,18 @@ import FaviconLogo from "../assets/favicon.png";
 
 function Jobs() {
   const [isHidden, setIsHidden] = useState(false);
+  const [isActive, setIsActive] = useState("icon1");
   {
     /* -------------- Toggle function ---------------  */
   }
   const toggler = () => {
     setIsHidden(!isHidden);
+  };
+  {
+    /* ------------ handleIconClick function -------------  */
+  }
+  const handleIconClick = (icon) => {
+    setIsActive(icon);
   };
   return (
     <>
@@ -161,21 +168,57 @@ function Jobs() {
                             height: "1.4rem",
                           }}
                         /> */}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          data-supported-dps="24x24"
-                          fill="currentColor"
-                          className="mercado-match"
-                          width="24"
-                          height="24"
-                          focusable="false"
-                          style={{ color: "gray" }}
-                        >
-                          <path d="M17 6V5a3 3 0 00-3-3h-4a3 3 0 00-3 3v1H2v4a3 3 0 003 3h14a3 3 0 003-3V6zM9 5a1 1 0 011-1h4a1 1 0 011 1v1H9zm10 9a4 4 0 003-1.38V17a3 3 0 01-3 3H5a3 3 0 01-3-3v-4.38A4 4 0 005 14z"></path>
-                        </svg>
+                        {isActive === "icon1" ? (
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            data-supported-dps="24x24"
+                            fill="currentColor"
+                            class="mercado-match"
+                            width="24"
+                            height="24"
+                            focusable="false"
+                          >
+                            <path d="M22.84 10.22L21 6h-3.95V5a3 3 0 00-3-3h-4a3 3 0 00-3 3v1H2l2.22 5.18A3 3 0 007 13h14a2 2 0 001.84-2.78zM15.05 6h-6V5a1 1 0 011-1h4a1 1 0 011 1zM7 14h15v3a3 3 0 01-3 3H5a3 3 0 01-3-3V8.54l1.3 3A4 4 0 007 14z"></path>
+                          </svg>
+                        ) : (
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            data-supported-dps="24x24"
+                            fill="currentColor"
+                            className="mercado-match"
+                            width="24"
+                            height="24"
+                            focusable="false"
+                            style={{ color: "gray" }}
+                          >
+                            <path d="M17 6V5a3 3 0 00-3-3h-4a3 3 0 00-3 3v1H2v4a3 3 0 003 3h14a3 3 0 003-3V6zM9 5a1 1 0 011-1h4a1 1 0 011 1v1H9zm10 9a4 4 0 003-1.38V17a3 3 0 01-3 3H5a3 3 0 01-3-3v-4.38A4 4 0 005 14z"></path>
+                          </svg>
+                        )}
                       </div>
-                      <span className="anchorLink nav-span">Jobs</span>
+                      {isActive ? (
+                        <span
+                          className="anchorLink nav-span"
+                          style={{ color: "black" }}
+                        >
+                          Jobs
+                        </span>
+                      ) : (
+                        <span className="anchorLink nav-span">Jobs</span>
+                      )}
+                      {isActive ? (
+                        <div
+                          className="anchorLink"
+                          style={{
+                            // width: "32px",
+                            height: "2px",
+                            backgroundColor: "black",
+                          }}
+                        ></div>
+                      ) : (
+                        <div className=""></div>
+                      )}
                     </a>
                   </li>
                   <li className="list-group">

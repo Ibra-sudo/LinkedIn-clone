@@ -4,11 +4,18 @@ import FaviconLogo from "../assets/favicon.png";
 
 function Network() {
   const [isHidden, setIsHidden] = useState(false);
+  const [isActive, setIsActive] = useState("icon1");
   {
     /* -------------- Toggle function ---------------  */
   }
   const toggler = () => {
     setIsHidden(!isHidden);
+  };
+  {
+    /* ------------ handleIconClick function -------------  */
+  }
+  const handleIconClick = (icon) => {
+    setIsActive(icon);
   };
   return (
     <>
@@ -123,7 +130,11 @@ function Network() {
                     </a>
                   </li>
                   <li className="list-group">
-                    <a className="nav-link text-center" href="/network">
+                    <a
+                      className="nav-link text-center"
+                      href="/network"
+                      onClick={handleIconClick}
+                    >
                       <div style={{ height: "24px" }}>
                         {/* <FontAwesomeIcon
                           icon={faPeopleGroup}
@@ -133,21 +144,52 @@ function Network() {
                             height: "1.4rem",
                           }}
                         /> */}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          height="24"
-                          width="24"
-                          fill="rgba(0,0,0,0.6)"
-                        >
-                          <path d="m12 16v6h-9v-6c0-1.7 1.3-3 3-3h3c1.7 0 3 1.3 3 3zm5.5-3c1.9 0 3.5-1.6 3.5-3.5s-1.6-3.5-3.5-3.5-3.5 1.6-3.5 3.5 1.6 3.5 3.5 3.5zm1 2h-2c-1.4 0-2.5 1.1-2.5 2.5v4.5h7v-4.5c0-1.4-1.1-2.5-2.5-2.5zm-11-13c-2.5 0-4.5 2-4.5 4.5s2 4.5 4.5 4.5 4.5-2 4.5-4.5-2-4.5-4.5-4.5z"></path>
-                        </svg>
+                        {isActive === "icon1" ? (
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            data-supported-dps="24x24"
+                            fill="currentColor"
+                            class="mercado-match"
+                            width="24"
+                            height="24"
+                            focusable="false"
+                          >
+                            <path d="M12 6.5a4.5 4.5 0 114.5 4.5A4.49 4.49 0 0112 6.5zm6 6.5h-3a3 3 0 00-3 3v6h9v-6a3 3 0 00-3-3zM6.5 6A3.5 3.5 0 1010 9.5 3.5 3.5 0 006.5 6zm1 9h-2A2.5 2.5 0 003 17.5V22h7v-4.5A2.5 2.5 0 007.5 15z"></path>
+                          </svg>
+                        ) : (
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="24"
+                            width="24"
+                            fill="rgba(0,0,0,0.6)"
+                          >
+                            <path d="m12 16v6h-9v-6c0-1.7 1.3-3 3-3h3c1.7 0 3 1.3 3 3zm5.5-3c1.9 0 3.5-1.6 3.5-3.5s-1.6-3.5-3.5-3.5-3.5 1.6-3.5 3.5 1.6 3.5 3.5 3.5zm1 2h-2c-1.4 0-2.5 1.1-2.5 2.5v4.5h7v-4.5c0-1.4-1.1-2.5-2.5-2.5zm-11-13c-2.5 0-4.5 2-4.5 4.5s2 4.5 4.5 4.5 4.5-2 4.5-4.5-2-4.5-4.5-4.5z"></path>
+                          </svg>
+                        )}
                       </div>
-                      <span
-                        className="anchorLink nav-span"
-                        // style={{ width: "68px" }}
-                      >
-                        My Network
-                      </span>
+                      {isActive ? (
+                        <span
+                          className="anchorLink nav-span"
+                          style={{ color: "black" }}
+                        >
+                          My Network
+                        </span>
+                      ) : (
+                        <span className="anchorLink nav-span">My Network</span>
+                      )}
+                      {isActive ? (
+                        <div
+                          className="anchorLink"
+                          style={{
+                            // width: "32px",
+                            height: "2px",
+                            backgroundColor: "black",
+                          }}
+                        ></div>
+                      ) : (
+                        <div className=""></div>
+                      )}
                     </a>
                   </li>
                   <li className="list-group">

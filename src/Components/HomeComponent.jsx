@@ -20,12 +20,19 @@ import FaviconLogo from "../assets/favicon.png";
 
 function HomeComponent() {
   const [isHidden, setIsHidden] = useState(false);
+  const [isActive, setIsActive] = useState("icon1");
 
   {
     /* ------------ Toggle function -------------  */
   }
   const toggler = () => {
     setIsHidden(!isHidden);
+  };
+  {
+    /* ------------ handleIconClick function -------------  */
+  }
+  const handleIconClick = (icon) => {
+    setIsActive(icon);
   };
 
   return (
@@ -113,6 +120,7 @@ function HomeComponent() {
                       className="nav-link active"
                       aria-current="page"
                       href="/home"
+                      onClick={handleIconClick}
                     >
                       <div className="" style={{ height: "23px" }}>
                         {/* <FontAwesomeIcon
@@ -123,21 +131,53 @@ function HomeComponent() {
                             height: "1.4rem",
                           }}
                         /> */}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          data-supported-dps="24x24"
-                          fill="currentColor"
-                          className="mercado-match"
-                          width="24"
-                          height="24"
-                          focusable="false"
-                          style={{ color: "gray" }}
-                        >
-                          <path d="M23 9v2h-2v7a3 3 0 01-3 3h-4v-6h-4v6H6a3 3 0 01-3-3v-7H1V9l11-7z"></path>
-                        </svg>
+                        {isActive === "icon1" ? (
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="24"
+                            width="24"
+                          >
+                            <path d="m23 9v2h-2v7c0 1.7-1.3 3-3 3h-4v-6h-4v6h-4c-1.7 0-3-1.3-3-3v-7h-2v-2l11-7z"></path>
+                            <path d="m20 2h-3v3.2l3 1.9z"></path>
+                          </svg>
+                        ) : (
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            data-supported-dps="24x24"
+                            fill="currentColor"
+                            className="mercado-match"
+                            width="24"
+                            height="24"
+                            focusable="false"
+                            style={{ color: "gray" }}
+                          >
+                            <path d="M23 9v2h-2v7a3 3 0 01-3 3h-4v-6h-4v6H6a3 3 0 01-3-3v-7H1V9l11-7z"></path>
+                          </svg>
+                        )}
                       </div>
-                      <span className="anchorLink nav-span">Home</span>
+                      {isActive ? (
+                        <span
+                          className="anchorLink nav-span"
+                          style={{ color: "black" }}
+                        >
+                          Home
+                        </span>
+                      ) : (
+                        <span className="anchorLink nav-span">Home</span>
+                      )}
+                      {isActive ? (
+                        <div
+                          className="anchorLink"
+                          style={{
+                            // width: "32px",
+                            height: "2px",
+                            backgroundColor: "black",
+                          }}
+                        ></div>
+                      ) : (
+                        <div className=""></div>
+                      )}
                     </a>
                   </li>
                   <li className="list-group">
@@ -151,6 +191,7 @@ function HomeComponent() {
                             height: "1.4rem",
                           }}
                         /> */}
+
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           height="24"

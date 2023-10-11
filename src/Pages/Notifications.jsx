@@ -4,11 +4,18 @@ import FaviconLogo from "../assets/favicon.png";
 
 function Notifications() {
   const [isHidden, setIsHidden] = useState(false);
+  const [isActive, setIsActive] = useState("icon1");
   {
     /* -------------- Toggle function ---------------  */
   }
   const toggler = () => {
     setIsHidden(!isHidden);
+  };
+  {
+    /* ------------ handleIconClick function -------------  */
+  }
+  const handleIconClick = (icon) => {
+    setIsActive(icon);
   };
   return (
     <>
@@ -212,16 +219,54 @@ function Notifications() {
                             height: "1.4rem",
                           }}
                         /> */}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          height="24"
-                          width="24"
-                          fill="rgba(0,0,0,0.6)"
-                        >
-                          <path d="M13.7 19C13.9 19.3 14 19.6 14 20C14 21.1 13.1 22 12 22C10.9 22 10 21.1 10 20C10 19.6 10.1 19.3 10.3 19H2V18C2 17 2.4 16.1 3.2 15.2L4.2 14H19.9L20.9 15.2C21.7 16.2 22.1 17.1 22.1 18V19H13.7ZM18.2 7.4C17.8 4.3 15.1 2 12 2C8.9 2 6.2 4.3 5.8 7.4L5 13H19L18.2 7.4Z"></path>
-                        </svg>
+                        {isActive === "icon1" ? (
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            data-supported-dps="24x24"
+                            fill="currentColor"
+                            class="mercado-match"
+                            width="24"
+                            height="24"
+                            focusable="false"
+                          >
+                            <path d="M22 19.24a3.46 3.46 0 01-.09.78l-.22 1-6.76-1.51A2.16 2.16 0 0115 20a2 2 0 11-3.53-1.28L2 16.62l.22-1A4.45 4.45 0 014 13.12l1.22-.93 15.46 3.44.7 1.36a5 5 0 01.62 2.25zm-1.49-10.4a6.29 6.29 0 00-4.92-6.69A6.76 6.76 0 0014.18 2a6.29 6.29 0 00-5.9 4.12l-2 5.27 13.8 3.08z"></path>
+                          </svg>
+                        ) : (
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="24"
+                            width="24"
+                            fill="rgba(0,0,0,0.6)"
+                          >
+                            <path d="M13.7 19C13.9 19.3 14 19.6 14 20C14 21.1 13.1 22 12 22C10.9 22 10 21.1 10 20C10 19.6 10.1 19.3 10.3 19H2V18C2 17 2.4 16.1 3.2 15.2L4.2 14H19.9L20.9 15.2C21.7 16.2 22.1 17.1 22.1 18V19H13.7ZM18.2 7.4C17.8 4.3 15.1 2 12 2C8.9 2 6.2 4.3 5.8 7.4L5 13H19L18.2 7.4Z"></path>
+                          </svg>
+                        )}
                       </div>
-                      <span className="anchorLink nav-span">Notification</span>
+                      {isActive ? (
+                        <span
+                          className="anchorLink nav-span"
+                          style={{ color: "black" }}
+                        >
+                          Notification
+                        </span>
+                      ) : (
+                        <span className="anchorLink nav-span">
+                          Notification
+                        </span>
+                      )}
+                      {isActive ? (
+                        <div
+                          className="anchorLink"
+                          style={{
+                            // width: "32px",
+                            height: "2px",
+                            backgroundColor: "black",
+                          }}
+                        ></div>
+                      ) : (
+                        <div className=""></div>
+                      )}
                     </a>
                   </li>
                   <li className="list-group dropdown-menu-end">
