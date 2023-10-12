@@ -26,7 +26,7 @@ function Network() {
             <a className="home-logo" href="#">
               <img src={FaviconLogo} alt="" width="47" height="47" />
             </a>
-            <div style={{ width: "370px" }}>
+            <div className="header-space">
               <div className="searchbar">
                 <div className="d-flex align-items-center">
                   {/* <FontAwesomeIcon
@@ -67,10 +67,7 @@ function Network() {
                   // style={{ height: "2.8rem", width: "100%" }}
                   // style={{ width: "100%" }}
                 >
-                  <li
-                    className="list-group text-center search-icon"
-                    style={{ width: "80px", height: "62px" }}
-                  >
+                  <li className="list-group text-center search-icon nav-li-style">
                     <a
                       className="nav-link"
                       // aria-current="page"
@@ -102,10 +99,7 @@ function Network() {
                       <span className="anchorLink nav-span">Search</span>
                     </a>
                   </li>
-                  <li
-                    className="list-group text-center"
-                    style={{ width: "80px", height: "62px" }}
-                  >
+                  <li className="list-group text-center nav-li-style">
                     <a
                       className="nav-link active"
                       aria-current="page"
@@ -137,10 +131,7 @@ function Network() {
                       <span className="anchorLink nav-span">Home</span>
                     </a>
                   </li>
-                  <li
-                    className="list-group"
-                    style={{ width: "80px", height: "62px" }}
-                  >
+                  <li className="list-group nav-li-style">
                     <a
                       className="nav-link text-center"
                       href="/network"
@@ -191,9 +182,9 @@ function Network() {
                       )}
                       {isActive ? (
                         <div
-                          className="anchorLink"
+                          className="anchorLink underLine-nav"
                           style={{
-                            // width: "32px",
+                            marginTop: "5px",
                             height: "2px",
                             backgroundColor: "black",
                           }}
@@ -203,10 +194,7 @@ function Network() {
                       )}
                     </a>
                   </li>
-                  <li
-                    className="list-group"
-                    style={{ width: "80px", height: "62px" }}
-                  >
+                  <li className="list-group nav-li-style">
                     <a className="nav-link text-center" href="/jobs">
                       <div style={{ height: "23px" }}>
                         {/* <FontAwesomeIcon
@@ -234,10 +222,7 @@ function Network() {
                       <span className="anchorLink nav-span">Jobs</span>
                     </a>
                   </li>
-                  <li
-                    className="list-group"
-                    style={{ width: "80px", height: "62px" }}
-                  >
+                  <li className="list-group nav-li-style">
                     <a className="nav-link text-center" href="/messaging">
                       <div style={{ height: "23px" }}>
                         {/* <FontAwesomeIcon
@@ -260,10 +245,7 @@ function Network() {
                       <span className="anchorLink nav-span">Messaging</span>
                     </a>
                   </li>
-                  <li
-                    className="list-group"
-                    style={{ width: "80px", height: "62px" }}
-                  >
+                  <li className="list-group nav-li-style">
                     <a className="nav-link text-center" href="/notifications">
                       <div style={{ height: "23px" }}>
                         {/* <FontAwesomeIcon
@@ -286,10 +268,7 @@ function Network() {
                       <span className="anchorLink nav-span">Notification</span>
                     </a>
                   </li>
-                  <li
-                    className="list-group dropdown-menu-end"
-                    style={{ width: "80px", height: "62px" }}
-                  >
+                  <li className="list-group dropdown-menu-end nav-li-style">
                     <a
                       className="nav-link text-center"
                       href="#"
@@ -415,10 +394,7 @@ function Network() {
                     id="navbarScroll"
                     // style={{ height: "2.3rem" }}
                   >
-                    <li
-                      className="list-group"
-                      style={{ width: "113px", height: "62px" }}
-                    >
+                    <li className="list-group nav-li-styled">
                       <a
                         className="nav-link text-center"
                         href="#"
@@ -496,10 +472,7 @@ function Network() {
                         )}
                       </a>
                     </li>
-                    <li
-                      className="list-group li-nav"
-                      style={{ width: "100px", height: "62px" }}
-                    >
+                    <li className="list-group li-nav Nav-li-styled">
                       <a className="nav-link" href="#">
                         <span
                           className="anchorLink nav-span text-center"

@@ -44,7 +44,7 @@ function HomeComponent() {
             <a className="home-logo" href="#">
               <img src={FaviconLogo} alt="" width="47" height="47" />
             </a>
-            <div style={{ width: "370px" }}>
+            <div className="header-space">
               <div className="searchbar">
                 <div className="d-flex align-items-center">
                   {/* <FontAwesomeIcon
@@ -73,7 +73,7 @@ function HomeComponent() {
                   type="search"
                   placeholder="Search"
                   aria-label="Search"
-                  style={{ height: "2.2rem" }}
+                  style={{ height: "2rem" }}
                 />
               </div>
             </div>
@@ -85,10 +85,7 @@ function HomeComponent() {
                   // style={{ height: "2.8rem", width: "100%" }}
                   // style={{ width: "100%" }}
                 >
-                  <li
-                    className="list-group text-center search-icon"
-                    style={{ width: "80px", height: "62px" }}
-                  >
+                  <li className="list-group text-center search-icon nav-li-style">
                     <a
                       className="nav-link"
                       // aria-current="page"
@@ -120,10 +117,7 @@ function HomeComponent() {
                       <span className="anchorLink nav-span">Search</span>
                     </a>
                   </li>
-                  <li
-                    className="list-group text-center"
-                    style={{ width: "80px", height: "62px" }}
-                  >
+                  <li className="list-group text-center nav-li-style">
                     <a
                       className="nav-link active"
                       aria-current="page"
@@ -176,9 +170,9 @@ function HomeComponent() {
                       )}
                       {isActive ? (
                         <div
-                          className="anchorLink"
+                          className="anchorLink underLine-nav"
                           style={{
-                            // width: "32px",
+                            marginTop: "5px",
                             height: "2px",
                             backgroundColor: "black",
                           }}
@@ -188,10 +182,7 @@ function HomeComponent() {
                       )}
                     </a>
                   </li>
-                  <li
-                    className="list-group"
-                    style={{ width: "80px", height: "62px" }}
-                  >
+                  <li className="list-group nav-li-style">
                     <a className="nav-link text-center" href="/network">
                       <div style={{ height: "24px" }}>
                         {/* <FontAwesomeIcon
@@ -212,18 +203,10 @@ function HomeComponent() {
                           <path d="m12 16v6h-9v-6c0-1.7 1.3-3 3-3h3c1.7 0 3 1.3 3 3zm5.5-3c1.9 0 3.5-1.6 3.5-3.5s-1.6-3.5-3.5-3.5-3.5 1.6-3.5 3.5 1.6 3.5 3.5 3.5zm1 2h-2c-1.4 0-2.5 1.1-2.5 2.5v4.5h7v-4.5c0-1.4-1.1-2.5-2.5-2.5zm-11-13c-2.5 0-4.5 2-4.5 4.5s2 4.5 4.5 4.5 4.5-2 4.5-4.5-2-4.5-4.5-4.5z"></path>
                         </svg>
                       </div>
-                      <span
-                        className="anchorLink nav-span"
-                        // style={{ width: "68px" }}
-                      >
-                        My Network
-                      </span>
+                      <span className="anchorLink nav-span">My Network</span>
                     </a>
                   </li>
-                  <li
-                    className="list-group"
-                    style={{ width: "80px", height: "62px" }}
-                  >
+                  <li className="list-group nav-li-style">
                     <a className="nav-link text-center" href="/jobs">
                       <div style={{ height: "23px" }}>
                         {/* <FontAwesomeIcon
@@ -251,10 +234,7 @@ function HomeComponent() {
                       <span className="anchorLink nav-span">Jobs</span>
                     </a>
                   </li>
-                  <li
-                    className="list-group"
-                    style={{ width: "80px", height: "62px" }}
-                  >
+                  <li className="list-group nav-li-style">
                     <a className="nav-link text-center" href="/messaging">
                       <div style={{ height: "23px" }}>
                         {/* <FontAwesomeIcon
@@ -277,10 +257,7 @@ function HomeComponent() {
                       <span className="anchorLink nav-span">Messaging</span>
                     </a>
                   </li>
-                  <li
-                    className="list-group"
-                    style={{ width: "80px", height: "62px" }}
-                  >
+                  <li className="list-group nav-li-style">
                     <a className="nav-link text-center" href="/notifications">
                       <div style={{ height: "23px" }}>
                         {/* <FontAwesomeIcon
@@ -303,10 +280,7 @@ function HomeComponent() {
                       <span className="anchorLink nav-span">Notification</span>
                     </a>
                   </li>
-                  <li
-                    className="list-group dropdown-menu-end"
-                    style={{ width: "80px", height: "62px" }}
-                  >
+                  <li className="list-group dropdown-menu-end nav-li-style">
                     <a
                       className="nav-link text-center"
                       href="#"
@@ -440,15 +414,8 @@ function HomeComponent() {
                   <div className="hstack" style={{ height: "50px" }}>
                     <div className="vr"></div>
                   </div>
-                  <div
-                    className="d-flex"
-                    id="navbarScroll"
-                    // style={{ height: "2.3rem" }}
-                  >
-                    <li
-                      className="list-group"
-                      style={{ width: "113px", height: "62px" }}
-                    >
+                  <div className="d-flex" id="navbarScroll">
+                    <li className="list-group nav-li-styled">
                       <a
                         className="nav-link text-center"
                         href="#"
@@ -526,15 +493,9 @@ function HomeComponent() {
                         )}
                       </a>
                     </li>
-                    <li
-                      className="list-group li-nav"
-                      style={{ width: "100px", height: "62px" }}
-                    >
+                    <li className="list-group li-nav Nav-li-styled">
                       <a className="nav-link" href="#">
-                        <span
-                          className="anchorLink nav-span text-center"
-                          // style={{ width: "100px" }}
-                        >
+                        <span className="anchorLink nav-span text-center">
                           Get hired faster. Try Premium free.
                         </span>
                       </a>
