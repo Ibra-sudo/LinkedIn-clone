@@ -6,6 +6,7 @@ import Network from "../Pages/Network";
 import Jobs from "../Pages/Jobs";
 import Messaging from "../Pages/Messaging";
 import Notifications from "../Pages/Notifications";
+import Profile from "../Pages/Profile";
 
 export const router = createBrowserRouter([
   {
@@ -35,5 +36,9 @@ export const router = createBrowserRouter([
   {
     path: "/notifications",
     element: <Notifications />,
+  },
+  {
+    path: "/profile",
+    element: <Profile />,
   },
 ]);

@@ -21,7 +21,7 @@ function SignupComponent() {
   };
   return (
     <>
-      <div className="App">
+      <div className="content-container">
         {/* -------------- Header Section ---------------  */}
         <header className="d-block">
           <a className="navbar-brand" href="#">
@@ -173,7 +173,7 @@ function SignupComponent() {
         </main>
 
         {/* -------------- Footer Section ---------------  */}
-        <footer className="justify-content-center bg-white">
+        <footer className="justify-content-center bg-white ff">
           <div className="d-flex text-center justify-content-center">
             <div className=" text-center justify-content-center">
               {/* <em className="text-black footer"> */}
@@ -181,7 +181,7 @@ function SignupComponent() {
               2023 */}
 
               {/* </em> */}
-              <ul className="gap-3 mt-2 me-4 ul-footer">
+              <ul className="gap-2 mt-2 me-4 ul-footer">
                 <li className="list-group li-footer">
                   <a
                     href="#"

@@ -22,13 +22,14 @@ function Messaging() {
       <div className="App bg">
         {/* -------------- Header Section ---------------  */}
         <header className="">
-          <div className="p-2 d-flex bg-white">
+          <div className="p-2 d-flex bg-white justify-content-center">
             <a className="home-logo" href="#">
               <img src={FaviconLogo} alt="" width="47" height="47" />
             </a>
-            <div className=" searchbar">
-              <div className="d-flex align-items-center">
-                {/* <FontAwesomeIcon
+            <div style={{ width: "370px" }}>
+              <div className="searchbar">
+                <div className="d-flex align-items-center">
+                  {/* <FontAwesomeIcon
                   icon={faMagnifyingGlass}
                   style={{
                     color: "#717171",
@@ -36,36 +37,40 @@ function Messaging() {
                     height: "1rem",
                   }}
                 /> */}
-                {/* <img src="/images/search-icon.svg" alt="" /> */}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 16 16"
-                  data-supported-dps="16x16"
-                  fill="currentColor"
-                  width="16"
-                  height="16"
-                  focusable="false"
-                >
-                  <path d="M14.56 12.44L11.3 9.18a5.51 5.51 0 10-2.12 2.12l3.26 3.26a1.5 1.5 0 102.12-2.12zM3 6.5A3.5 3.5 0 116.5 10 3.5 3.5 0 013 6.5z"></path>
-                </svg>
+                  {/* <img src="/images/search-icon.svg" alt="" /> */}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 16 16"
+                    data-supported-dps="16x16"
+                    fill="currentColor"
+                    width="16"
+                    height="16"
+                    focusable="false"
+                  >
+                    <path d="M14.56 12.44L11.3 9.18a5.51 5.51 0 10-2.12 2.12l3.26 3.26a1.5 1.5 0 102.12-2.12zM3 6.5A3.5 3.5 0 116.5 10 3.5 3.5 0 013 6.5z"></path>
+                  </svg>
+                </div>
+                <input
+                  className=""
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                  style={{ height: "2.2rem" }}
+                />
               </div>
-              <input
-                className=""
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-                style={{ height: "2.2rem" }}
-              />
             </div>
             {/* -------------- Navbar Section ---------------  */}
             <nav className="d-flex bg-white">
               <div className=" " style={{ height: "3rem", width: "100%" }}>
                 <ul
                   className="align-items-center ul-nav"
-                  style={{ height: "2.8rem", width: "100%" }}
+                  // style={{ height: "2.8rem", width: "100%" }}
                   // style={{ width: "100%" }}
                 >
-                  <li className="list-group text-center search-icon">
+                  <li
+                    className="list-group text-center search-icon"
+                    style={{ width: "80px", height: "62px" }}
+                  >
                     <a
                       className="nav-link"
                       // aria-current="page"
@@ -97,7 +102,10 @@ function Messaging() {
                       <span className="anchorLink nav-span">Search</span>
                     </a>
                   </li>
-                  <li className="list-group text-center">
+                  <li
+                    className="list-group text-center"
+                    style={{ width: "80px", height: "62px" }}
+                  >
                     <a
                       className="nav-link active"
                       aria-current="page"
@@ -129,7 +137,10 @@ function Messaging() {
                       <span className="anchorLink nav-span">Home</span>
                     </a>
                   </li>
-                  <li className="list-group">
+                  <li
+                    className="list-group"
+                    style={{ width: "80px", height: "62px" }}
+                  >
                     <a className="nav-link text-center" href="/network">
                       <div style={{ height: "24px" }}>
                         {/* <FontAwesomeIcon
@@ -157,7 +168,10 @@ function Messaging() {
                       </span>
                     </a>
                   </li>
-                  <li className="list-group">
+                  <li
+                    className="list-group"
+                    style={{ width: "80px", height: "62px" }}
+                  >
                     <a className="nav-link text-center" href="/jobs">
                       <div style={{ height: "23px" }}>
                         {/* <FontAwesomeIcon
@@ -185,7 +199,10 @@ function Messaging() {
                       <span className="anchorLink nav-span">Jobs</span>
                     </a>
                   </li>
-                  <li className="list-group">
+                  <li
+                    className="list-group"
+                    style={{ width: "80px", height: "62px" }}
+                  >
                     <a className="nav-link text-center" href="/messaging">
                       <div style={{ height: "23px" }}>
                         {/* <FontAwesomeIcon
@@ -244,7 +261,10 @@ function Messaging() {
                       )}
                     </a>
                   </li>
-                  <li className="list-group">
+                  <li
+                    className="list-group"
+                    style={{ width: "80px", height: "62px" }}
+                  >
                     <a className="nav-link text-center" href="/notifications">
                       <div style={{ height: "23px" }}>
                         {/* <FontAwesomeIcon
@@ -267,7 +287,10 @@ function Messaging() {
                       <span className="anchorLink nav-span">Notification</span>
                     </a>
                   </li>
-                  <li className="list-group dropdown-menu-end">
+                  <li
+                    className="list-group dropdown-menu-end"
+                    style={{ width: "80px", height: "62px" }}
+                  >
                     <a
                       className="nav-link text-center"
                       href="#"
@@ -385,15 +408,18 @@ function Messaging() {
                       </li>
                     </ul>
                   </li>
-                  <div className="d-flex" style={{ height: "50px" }}>
+                  <div className="hstack" style={{ height: "50px" }}>
                     <div className="vr"></div>
                   </div>
                   <div
-                    className="d-flex nav-work-icon"
+                    className="d-flex"
                     id="navbarScroll"
                     // style={{ height: "2.3rem" }}
                   >
-                    <li className="list-group">
+                    <li
+                      className="list-group"
+                      style={{ width: "113px", height: "62px" }}
+                    >
                       <a
                         className="nav-link text-center"
                         href="#"
@@ -411,38 +437,74 @@ function Messaging() {
                               height: "1.4rem",
                             }}
                           /> */}
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            data-supported-dps="24x24"
-                            fill="currentColor"
-                            className="mercado-match"
-                            width="24"
-                            height="24"
-                            focusable="false"
-                            style={{ color: "gray" }}
-                          >
-                            <path d="M3 3h4v4H3zm7 4h4V3h-4zm7-4v4h4V3zM3 14h4v-4H3zm7 0h4v-4h-4zm7 0h4v-4h-4zM3 21h4v-4H3zm7 0h4v-4h-4zm7 0h4v-4h-4z"></path>
-                          </svg>
+                          {isHidden ? (
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              data-supported-dps="24x24"
+                              fill="currentColor"
+                              className="mercado-match"
+                              width="24"
+                              height="24"
+                              focusable="false"
+                              // style={{ color: "gray" }}
+                            >
+                              <path d="M3 3h4v4H3zm7 4h4V3h-4zm7-4v4h4V3zM3 14h4v-4H3zm7 0h4v-4h-4zm7 0h4v-4h-4zM3 21h4v-4H3zm7 0h4v-4h-4zm7 0h4v-4h-4z"></path>
+                            </svg>
+                          ) : (
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              data-supported-dps="24x24"
+                              fill="currentColor"
+                              className="mercado-match"
+                              width="24"
+                              height="24"
+                              focusable="false"
+                              style={{ color: "gray" }}
+                            >
+                              <path d="M3 3h4v4H3zm7 4h4V3h-4zm7-4v4h4V3zM3 14h4v-4H3zm7 0h4v-4h-4zm7 0h4v-4h-4zM3 21h4v-4H3zm7 0h4v-4h-4zm7 0h4v-4h-4z"></path>
+                            </svg>
+                          )}
                         </div>
-                        <span className="anchorLink nav-span">
-                          For Business
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            data-supported-dps="16x16"
+                        {isHidden ? (
+                          <span
+                            className="anchorLink nav-span"
+                            style={{ color: "black" }}
                           >
-                            <path d="M8.8 10.66L14 5.12a.07.07 0 00-.07-.12H2.07a.07.07 0 00-.07.12l5.2 5.54a1.1 1.1 0 001.6 0z"></path>
-                          </svg>
-                        </span>
+                            For Business
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              data-supported-dps="16x16"
+                            >
+                              <path d="M8.8 10.66L14 5.12a.07.07 0 00-.07-.12H2.07a.07.07 0 00-.07.12l5.2 5.54a1.1 1.1 0 001.6 0z"></path>
+                            </svg>
+                          </span>
+                        ) : (
+                          <span className="anchorLink nav-span">
+                            For Business
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              data-supported-dps="16x16"
+                            >
+                              <path d="M8.8 10.66L14 5.12a.07.07 0 00-.07-.12H2.07a.07.07 0 00-.07.12l5.2 5.54a1.1 1.1 0 001.6 0z"></path>
+                            </svg>
+                          </span>
+                        )}
                       </a>
                     </li>
-                    <li className="list-group li-nav">
+                    <li
+                      className="list-group li-nav"
+                      style={{ width: "100px", height: "62px" }}
+                    >
                       <a className="nav-link" href="#">
                         <span
                           className="anchorLink nav-span text-center"
-                          style={{ width: "100px" }}
+                          // style={{ width: "100px" }}
                         >
                           Get hired faster. Try Premium free.
                         </span>

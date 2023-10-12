@@ -8,7 +8,7 @@ import LinkedInLogoFooter from "../assets/linkedin-logo-black.png";
 function LoginComponent() {
   return (
     <>
-      <div className="App">
+      <div className="content-container">
         {/* -------------- Header Section ---------------  */}
         <header className="d-block">
           <a className="navbar-brand " href="#">
@@ -19,12 +19,10 @@ function LoginComponent() {
         {/* -------------- Main Section ---------------  */}
         <main
           className="row justify-content-center align-items-center"
-          style={{ height: "88%" }}
+          // style={{ height: "88%" }}
         >
-          <div
-            className="card-shadow"
-            style={{ width: "22rem", height: "35rem" }}
-          >
+          {/* , height: "35rem" */}
+          <div className="card-shadow" style={{ width: "22rem" }}>
             <div className="card-body mt-4 mx-1">
               <div>
                 <h1 className="fw-medium fs-2">Sign in</h1>
@@ -148,14 +146,14 @@ function LoginComponent() {
           </div>
         </main>
 
-        <div className="text-center pb-3">
+        <div className="text-center my-3">
           New to LinkedIn?
           <a href="/signup" className="text-decoration-none p-2 link">
             Join now
           </a>
         </div>
         {/* -------------- Footer Section ---------------  */}
-        <footer className=" bg-white">
+        <footer className="bg-white ff">
           <div className="d-flex text-center justify-content-center">
             {/* <div className=" "> */}
             {/* <em className="text-black footer"> */}
