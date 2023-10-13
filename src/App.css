@@ -91,6 +91,13 @@ footer {
   color: gray;
 }
 
+.anchor-Link {
+  font-size: 12px;
+  font-weight: 370;
+  text-decoration: underline;
+  color: #9b6a2a;
+}
+
 .searchbar {
   width: 290px;
   height: 30px;
@@ -236,11 +243,14 @@ li:hover svg {
   .anchorLink {
     display: none;
   }
+  .anchor-Link {
+    display: flex;
+    /* white-space: pre-line; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   .ul-nav {
     display: flex;
-    /* gap: 29px; */
-    /* margin-top: 10px; */
-    /* align-items: center; */
   }
   .nav-li-style {
     width: 48px;
@@ -254,7 +264,7 @@ li:hover svg {
   }
   .Nav-li-styled {
     width: 48px;
-    height: 62px;
+    height: 58px;
   }
 }
 
@@ -279,6 +289,12 @@ li:hover svg {
   .anchorLink {
     display: none;
   }
+  .anchor-Link {
+    display: flex;
+    /* white-space: nowrap; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   .ul-nav {
     display: flex;
     /* gap: 40px; */
@@ -293,7 +309,7 @@ li:hover svg {
   }
   .Nav-li-styled {
     width: 48px;
-    height: 62px;
+    height: 58px;
   }
   .header-space {
     width: 40px;
