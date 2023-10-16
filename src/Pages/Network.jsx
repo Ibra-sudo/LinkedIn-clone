@@ -28,7 +28,7 @@ function Network() {
                   borderRadius: "10px",
                 }}
               >
-                2 of 3 (Network Page)
+                2 of 3 (....Network Page....)
               </div>
               <div
                 className="col-md-3 d-none d-lg-block bg-white"

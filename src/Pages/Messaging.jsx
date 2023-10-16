@@ -28,7 +28,7 @@ function Messaging() {
                   borderRadius: "10px",
                 }}
               >
-                2 of 3 (Messaging)
+                2 of 3 (....Messaging....)
               </div>
               <div
                 className="col-md-3 d-none d-lg-block bg-white"

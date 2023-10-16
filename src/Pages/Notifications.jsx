@@ -28,7 +28,7 @@ function Notifications() {
                   borderRadius: "10px",
                 }}
               >
-                2 of 3 (Notifications)
+                2 of 3 (....Notifications....)
               </div>
               <div
                 className="col-md-3 d-none d-lg-block bg-white"
