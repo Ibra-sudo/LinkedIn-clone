@@ -1,24 +1,81 @@
 import React, { useState } from "react";
-import { signup, signInWithGoogle } from "../Api/firebaseAuth";
+import { signInWithGoogle } from "../Api/firebaseAuth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../Config/firebaseConfig";
+
+import { Link, useNavigate } from "react-router-dom";
 
 import LinkedInLogo from "../assets/LinkedIn_logo.png";
 import LinkedInLogoFooter from "../assets/linkedin-logo-black.png";
 
 function SignupComponent() {
-  const [credentials, setCredentials] = useState({});
-  // Signup function
-  const signUp = () => {
-    try {
-      let res = signup(credentials.email, credentials.password);
-      if (res) {
-        console.log("Signup successful!");
-      } else {
-        console.log("Signup faild!");
-      }
-    } catch (err) {
-      console.error(err);
-    }
+  // const [credentials, setCredentials] = useState({});
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
+  const navigate = useNavigate();
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    return emailRegex.test(email);
   };
+
+  const validatePassword = (password) => {
+    const passwordRegex =
+      /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    return passwordRegex.test(password);
+  };
+
+  // Signup function
+  const handelSignup = (e) => {
+    e.preventDefault();
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        navigate("/home");
+        // console.log(user);
+        console.log("Signup successful!");
+      })
+      .catch((error) => {
+        // setEmailError(true);
+        if (!validateEmail(email)) {
+          setEmailError(true);
+        }
+        // setPasswordError(true);
+        if (!validatePassword(password)) {
+          setPasswordError(true);
+        }
+        console.log("Signup faild!");
+      });
+  };
+
+  // const signUp = (event) => {
+  //   event.preventDefault();
+  //   setEmailError("");
+  //   setPasswordError("");
+  //   if (!validateEmail(credentials.email)) {
+  //     setEmailError("Invalid email format");
+  //   }
+
+  //   // if (!validatePassword(credentials.password)) {
+  //   //   setPasswordError("Password must be at least 6 characters long");
+  //   // }
+  //   try {
+  //     let res = signup(credentials.email, credentials.password);
+  //     if (credentials.email !== " " && credentials.password !== " ") {
+  //       navigate("/home");
+  //       console.log("Signup successful!");
+  //       // alert("Signup successful!");
+  //     } else {
+  //       console.log("Signup faild!");
+  //       // alert("Signup failed!");
+  //     }
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
   return (
     <>
       <div className="content-container">
@@ -51,49 +108,69 @@ function SignupComponent() {
                   Stay updated on your professinal world
                 </p>
               </div> */}
-              <form className="needs-validation" action="" noValidate>
+              <form
+                onSubmit={handelSignup}
+                className="needs-validation"
+                action=""
+                noValidate
+              >
                 <label htmlFor="floatingInput validEmail">Email</label>
                 <div className="mb-2">
                   <input
-                    onChange={(e) =>
-                      setCredentials({ ...credentials, email: e.target.value })
-                    }
                     type="email"
+                    value={email}
                     className="form-control border-black input-signup"
                     id="floatingInput validEmail"
-                    // name="csrToken"
-                    // value=""
-                    // placeholder="Email or Phone"
+                    // onChange={(e) =>
+                    //   setCredentials({ ...credentials, email: e.target.value })
+                    // }
+                    onChange={(e) => setEmail(e.target.value)}
                     required
                   />
-
-                  <div className="invalid-feedback">
+                  {emailError && (
+                    <p
+                      style={{ color: "red", fontSize: "12px", height: "2px" }}
+                    >
+                      {/* {emailError} */}
+                      Invalid email format
+                    </p>
+                  )}
+                  {/* <div className="invalid-feedback">
                     Please enter your email address.
-                  </div>
+                  </div> */}
                 </div>
                 <label htmlFor="floatingPassword validPassword">
                   Password (6+ characters)
                 </label>
                 <div className="mb-3">
                   <input
-                    onChange={(e) =>
-                      setCredentials({
-                        ...credentials,
-                        password: e.target.value,
-                      })
-                    }
                     type="password"
+                    value={password}
                     className="form-control border-black input-signup"
                     id="floatingPassword validPassword"
-                    // name="csrToken"
-                    // value=""
-                    // placeholder="Password"
+                    // onChange={(e) =>
+                    //   setCredentials({
+                    //     ...credentials,
+                    //     password: e.target.value,
+                    //   })
+                    // }
+                    onChange={(e) => setPassword(e.target.value)}
                     required
                   />
 
-                  <div className="invalid-feedback">
+                  {passwordError && (
+                    <p
+                      style={{ color: "red", fontSize: "12px", height: "8px" }}
+                    >
+                      {/* {passwordError} */}
+                      Password should be at least 6 characters long
+                      {/* Password must meet criteria (e.g., at least 8 characters,
+                      1 uppercase, 1 digit, and 1 special character) */}
+                    </p>
+                  )}
+                  {/* <div className="invalid-feedback">
                     Please enter a password.
-                  </div>
+                  </div> */}
                 </div>
                 <p className="fw-normal text-center justify-content-center px-3 mb-3 p-signIn-style">
                   By clicking Agree & Join, you agree to the LinkedIn{" "}
@@ -111,7 +188,6 @@ function SignupComponent() {
 
                 <div className="mb-4 d-grid">
                   <button
-                    onClick={signUp}
                     type="submit"
                     className="btn btn-primary btn-lg rounded-pill fw-normal"
                     style={{ height: "3.1rem" }}

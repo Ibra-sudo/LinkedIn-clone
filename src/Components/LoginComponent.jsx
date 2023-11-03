@@ -1,11 +1,75 @@
-import React from "react";
-// import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { signInWithGoogle } from "../Api/firebaseAuth";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../Config/firebaseConfig";
 
 import LinkedInLogo from "../assets/LinkedIn_logo.png";
 import LinkedInLogoFooter from "../assets/linkedin-logo-black.png";
+import { AuthContext } from "../context/AuthContext";
 
 function LoginComponent() {
+  // const [credentials, setCredentials] = useState({});
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
+  const navigate = useNavigate();
+
+  const { dispatch } = useContext(AuthContext);
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    return emailRegex.test(email);
+  };
+
+  const validatePassword = (password) => {
+    const passwordRegex =
+      /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    return passwordRegex.test(password);
+  };
+
+  const handelLogin = (e) => {
+    e.preventDefault();
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        dispatch({ type: "LOGIN", payload: user });
+        navigate("/home");
+        // console.log(user);
+        console.log("Login successful!");
+      })
+      .catch((error) => {
+        // setEmailError(true);
+        if (!validateEmail(email)) {
+          setEmailError(true);
+        }
+        // setPasswordError(true);
+        if (!validatePassword(password)) {
+          setPasswordError(true);
+        }
+        console.log("Login faild!");
+      });
+  };
+  // Signin function
+  // const signIn = () => {
+  //   try {
+  //     let res = signin(
+  //       credentials.email == credentials.email &&
+  //         credentials.password == credentials.password
+  //     );
+  //     if (res) {
+  //       navigate("/home");
+  //       console.log("Signin successful!");
+  //     } else {
+  //       console.log("Signin faild!");
+  //       alert("Signin failed!");
+  //     }
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
   return (
     <>
       <div className="content-container">
@@ -30,47 +94,75 @@ function LoginComponent() {
                   Stay updated on your professinal world
                 </p>
               </div>
-              <form className="needs-validation" action="" noValidate>
+              <form
+                onSubmit={handelLogin}
+                className="needs-validation"
+                action=""
+                noValidate
+              >
                 <div className="form-floating mb-3">
                   <input
+                    // onChange={(e) =>
+                    //   setCredentials({ ...credentials, email: e.target.value })
+                    // }
                     type="email"
+                    value={email}
                     className="form-control border-black input-login"
                     id="floatingInput validEmail"
-                    // name="csrToken"
-                    // value=""
                     // placeholder="Email or Phone"
+                    onChange={(e) => setEmail(e.target.value)}
                     required
                   />
                   <label htmlFor="floatingInput validEmail">
                     Email or Phone
                   </label>
-                  <div className="invalid-feedback">
+                  {/* <div className="invalid-feedback">
                     Please enter an email address or phone number.
-                  </div>
+                  </div> */}
+                  {emailError && (
+                    <p
+                      style={{ color: "red", fontSize: "12px", height: "2px" }}
+                    >
+                      {/* {emailError} */}
+                      Invalid email format
+                    </p>
+                  )}
                 </div>
                 <div className="form-floating mb-2">
                   <input
+                    // onChange={(e) =>
+                    //   setCredentials({ ...credentials, email: e.target.value })
+                    // }
                     type="password"
+                    value={password}
                     className="form-control border-black input-login"
                     id="floatingPassword validPassword"
-                    // name="csrToken"
-                    // value=""
                     // placeholder="Password"
+                    onChange={(e) => setPassword(e.target.value)}
                     required
                   />
                   <label htmlFor="floatingPassword validPassword">
                     Password
                   </label>
-                  <div className="invalid-feedback">
+                  {/* <div className="invalid-feedback">
                     Please enter a password.
-                  </div>
+                  </div> */}
+                  {passwordError && (
+                    <p
+                      style={{ color: "red", fontSize: "12px", height: "8px" }}
+                    >
+                      {/* {passwordError} */}
+                      Password should be at least 6 characters long
+                      {/* Password must meet criteria (e.g., at least 8 characters,
+                      1 uppercase, 1 digit, and 1 special character) */}
+                    </p>
+                  )}
                 </div>
                 <a href="#" className="mb-3 text-decoration-none p-2 link">
                   Forget password?
                 </a>
                 <div className="mt-4 mb-3 d-grid">
                   <button
-                    // onClick={}
                     type="submit"
                     className="btn btn-primary btn-lg rounded-pill fw-bold"
                     style={{ height: "3.1rem" }}

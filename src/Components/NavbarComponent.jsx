@@ -1,10 +1,19 @@
 import React, { useState } from "react";
+import { signout } from "../Api/firebaseAuth";
+
+import { useNavigate } from "react-router-dom";
 
 import FaviconLogo from "../assets/favicon.png";
 
 function NavbarComponent() {
   const [isHidden, setIsHidden] = useState(false);
   const [isActive, setIsActive] = useState("icon1");
+  const navigate = useNavigate();
+
+  const signOut = () => {
+    signout();
+    navigate("/");
+  };
 
   {
     /* ------------ Toggle function -------------  */
@@ -383,6 +392,7 @@ function NavbarComponent() {
                       <a
                         className="text-decoration-none fw-light ms-2"
                         href="#"
+                        onClick={signOut}
                       >
                         Sign Out
                       </a>

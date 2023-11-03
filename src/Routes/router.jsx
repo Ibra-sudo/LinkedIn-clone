@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import Login from "../Pages/Login";
 import Signup from "../Pages/Signup";
 import Home from "../Pages/Home";
@@ -8,37 +8,149 @@ import Messaging from "../Pages/Messaging";
 import Notifications from "../Pages/Notifications";
 import Profile from "../Pages/Profile";
 
-export const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Login />,
-  },
-  {
-    path: "/home",
-    element: <Home />,
-  },
-  {
-    path: "/signup",
-    element: <Signup />,
-  },
-  {
-    path: "/network",
-    element: <Network />,
-  },
-  {
-    path: "/jobs",
-    element: <Jobs />,
-  },
-  {
-    path: "/messaging",
-    element: <Messaging />,
-  },
-  {
-    path: "/notifications",
-    element: <Notifications />,
-  },
-  {
-    path: "/profile",
-    element: <Profile />,
-  },
-]);
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+
+function router() {
+  const { currentUser } = useContext(AuthContext);
+  const RequireAuth = ({ children }) => {
+    return currentUser ? children : <Navigate to="/" />;
+  };
+  console.log(currentUser);
+
+  // const currentUser = false;
+
+  return createBrowserRouter([
+    {
+      path: "/",
+      element: <Login />,
+    },
+    {
+      path: "/home",
+      element: (
+        <RequireAuth>
+          {" "}
+          <Home />{" "}
+        </RequireAuth>
+      ),
+    },
+    {
+      path: "/signup",
+      element: <Signup />,
+    },
+    {
+      path: "/network",
+      element: (
+        <RequireAuth>
+          {" "}
+          <Network />
+        </RequireAuth>
+      ),
+    },
+    {
+      path: "/jobs",
+      element: (
+        <RequireAuth>
+          {" "}
+          <Jobs />
+        </RequireAuth>
+      ),
+    },
+    {
+      path: "/messaging",
+      element: (
+        <RequireAuth>
+          {" "}
+          <Messaging />
+        </RequireAuth>
+      ),
+    },
+    {
+      path: "/notifications",
+      element: (
+        <RequireAuth>
+          {" "}
+          <Notifications />
+        </RequireAuth>
+      ),
+    },
+    {
+      path: "/profile",
+      element: (
+        <RequireAuth>
+          {" "}
+          <Profile />
+        </RequireAuth>
+      ),
+    },
+  ]);
+}
+
+export default router;
+
+// export const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <Login />,
+//   },
+//   {
+//     path: "/home",
+//     element: (
+//       <RequireAuth>
+//         {" "}
+//         <Home />{" "}
+//       </RequireAuth>
+//     ),
+//   },
+//   {
+//     path: "/signup",
+//     element: <Signup />,
+//   },
+//   {
+//     path: "/network",
+//     element: (
+//       <RequireAuth>
+//         {" "}
+//         <Network />
+//       </RequireAuth>
+//     ),
+//   },
+//   {
+//     path: "/jobs",
+//     element: (
+//       <RequireAuth>
+//         {" "}
+//         <Jobs />
+//       </RequireAuth>
+//     ),
+//   },
+//   {
+//     path: "/messaging",
+//     element: (
+//       <RequireAuth>
+//         {" "}
+//         <Messaging />
+//       </RequireAuth>
+//     ),
+//   },
+//   {
+//     path: "/notifications",
+//     element: (
+//       <RequireAuth>
+//         {" "}
+//         <Notifications />
+//       </RequireAuth>
+//     ),
+//   },
+//   {
+//     path: "/profile",
+//     element: (
+//       <RequireAuth>
+//         {" "}
+//         <Profile />
+//       </RequireAuth>
+//     ),
+//   },
+// ]);
+
+// export default router;
