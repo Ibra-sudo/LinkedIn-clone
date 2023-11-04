@@ -1,17 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { signout } from "../Api/firebaseAuth";
 
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 import FaviconLogo from "../assets/favicon.png";
+import { signOut } from "@firebase/auth";
 
 function NavbarComponent() {
   const [isHidden, setIsHidden] = useState(false);
   const [isActive, setIsActive] = useState("icon1");
   const navigate = useNavigate();
+  const { dispatch } = useContext(AuthContext);
 
   const signOut = () => {
     signout();
+    dispatch({ type: "LOGOUT" });
     navigate("/");
   };
 
@@ -1012,6 +1016,15 @@ function NavbarComponent() {
 function NavbarNetwork() {
   const [isHidden, setIsHidden] = useState(false);
   const [isActive, setIsActive] = useState("icon1");
+  const navigate = useNavigate();
+  const { dispatch } = useContext(AuthContext);
+
+  const signOut = () => {
+    signout();
+    dispatch({ type: "LOGOUT" });
+    navigate("/");
+  };
+
   {
     /* -------------- Toggle function ---------------  */
   }
@@ -1158,7 +1171,7 @@ function NavbarNetwork() {
                           viewBox="0 0 24 24"
                           data-supported-dps="24x24"
                           fill="currentColor"
-                          class="mercado-match"
+                          className="mercado-match"
                           width="24"
                           height="24"
                           focusable="false"
@@ -1382,6 +1395,7 @@ function NavbarNetwork() {
                       <a
                         className="text-decoration-none fw-light ms-2"
                         href="#"
+                        onClick={signOut}
                       >
                         Sign Out
                       </a>
@@ -2007,6 +2021,15 @@ function NavbarNetwork() {
 function NavbarJobs() {
   const [isHidden, setIsHidden] = useState(false);
   const [isActive, setIsActive] = useState("icon1");
+  const navigate = useNavigate();
+  const { dispatch } = useContext(AuthContext);
+
+  const signOut = () => {
+    signout();
+    dispatch({ type: "LOGOUT" });
+    navigate("/");
+  };
+
   {
     /* -------------- Toggle function ---------------  */
   }
@@ -2177,7 +2200,7 @@ function NavbarJobs() {
                           viewBox="0 0 24 24"
                           data-supported-dps="24x24"
                           fill="currentColor"
-                          class="mercado-match"
+                          className="mercado-match"
                           width="24"
                           height="24"
                           focusable="false"
@@ -2378,6 +2401,7 @@ function NavbarJobs() {
                       <a
                         className="text-decoration-none fw-light ms-2"
                         href="#"
+                        onClick={signOut}
                       >
                         Sign Out
                       </a>
@@ -3000,6 +3024,15 @@ function NavbarJobs() {
 function NavbarMessaging() {
   const [isHidden, setIsHidden] = useState(false);
   const [isActive, setIsActive] = useState("icon1");
+  const navigate = useNavigate();
+  const { dispatch } = useContext(AuthContext);
+
+  const signOut = () => {
+    signout();
+    dispatch({ type: "LOGOUT" });
+    navigate("/");
+  };
+
   {
     /* -------------- Toggle function ---------------  */
   }
@@ -3198,7 +3231,7 @@ function NavbarMessaging() {
                           viewBox="0 0 24 24"
                           data-supported-dps="24x24"
                           fill="currentColor"
-                          class="mercado-match"
+                          className="mercado-match"
                           width="24"
                           height="24"
                           focusable="false"
@@ -3371,6 +3404,7 @@ function NavbarMessaging() {
                       <a
                         className="text-decoration-none fw-light ms-2"
                         href="#"
+                        onClick={signOut}
                       >
                         Sign Out
                       </a>
@@ -3993,6 +4027,15 @@ function NavbarMessaging() {
 function NavbarNotifications() {
   const [isHidden, setIsHidden] = useState(false);
   const [isActive, setIsActive] = useState("icon1");
+  const navigate = useNavigate();
+  const { dispatch } = useContext(AuthContext);
+
+  const signOut = () => {
+    signout();
+    dispatch({ type: "LOGOUT" });
+    navigate("/");
+  };
+
   {
     /* -------------- Toggle function ---------------  */
   }
@@ -4214,7 +4257,7 @@ function NavbarNotifications() {
                           viewBox="0 0 24 24"
                           data-supported-dps="24x24"
                           fill="currentColor"
-                          class="mercado-match"
+                          className="mercado-match"
                           width="24"
                           height="24"
                           focusable="false"
@@ -4364,6 +4407,7 @@ function NavbarNotifications() {
                       <a
                         className="text-decoration-none fw-light ms-2"
                         href="#"
+                        onClick={signOut}
                       >
                         Sign Out
                       </a>

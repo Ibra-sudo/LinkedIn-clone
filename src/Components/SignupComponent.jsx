@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { signInWithGoogle } from "../Api/firebaseAuth";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../Config/firebaseConfig";
@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import LinkedInLogo from "../assets/LinkedIn_logo.png";
 import LinkedInLogoFooter from "../assets/linkedin-logo-black.png";
+import { AuthContext } from "../context/AuthContext";
 
 function SignupComponent() {
   // const [credentials, setCredentials] = useState({});
@@ -15,6 +16,8 @@ function SignupComponent() {
   const [emailError, setEmailError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
   const navigate = useNavigate();
+
+  const { dispatch } = useContext(AuthContext);
 
   const validateEmail = (email) => {
     const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
@@ -34,6 +37,7 @@ function SignupComponent() {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
+        dispatch({ type: "LOGIN", payload: user });
         navigate("/home");
         // console.log(user);
         console.log("Signup successful!");

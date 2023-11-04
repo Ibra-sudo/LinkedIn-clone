@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { signInWithGoogle } from "../Api/firebaseAuth";
+import { signInWithGoogle, signInWithApple } from "../Api/firebaseAuth";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../Config/firebaseConfig";
 
@@ -217,6 +217,7 @@ function LoginComponent() {
               </div>
               <div className="mb-4 d-grid">
                 <button
+                  // onClick={signInWithApple}
                   type="submit"
                   className="btn btn-outline-secondary rounded-pill fw-light"
                   style={{ height: "2.6rem" }}

@@ -1,4 +1,9 @@
-import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
+import {
+  signInWithPopup,
+  GoogleAuthProvider,
+  OAuthProvider,
+  signOut,
+} from "firebase/auth";
 import { auth } from "../Config/firebaseConfig";
 
 // const signin = (email, password) => {
@@ -23,6 +28,10 @@ import { auth } from "../Config/firebaseConfig";
 //     return err;
 //   }
 // };
+const signInWithApple = async (e) => {
+  const provider = await new OAuthProvider("apple.com");
+  return signInWithPopup(auth, provider);
+};
 
 const signInWithGoogle = async (e) => {
   const provider = await new GoogleAuthProvider();
@@ -33,4 +42,4 @@ const signout = () => {
   signOut(auth);
 };
 
-export { signout, signInWithGoogle };
+export { signout, signInWithGoogle, signInWithApple };
