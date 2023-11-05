@@ -91,6 +91,9 @@
 //       </BrowserRouter>
 //     </div>
 //   );
+// }
+
+// export default router;
 
 // return createBrowserRouter([
 //   {
@@ -156,8 +159,6 @@
 //     ),
 //   },
 // ]);
-
-// export default router;
 
 // export const router = createBrowserRouter([
 //   {

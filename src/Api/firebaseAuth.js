@@ -1,9 +1,4 @@
-import {
-  signInWithPopup,
-  GoogleAuthProvider,
-  OAuthProvider,
-  signOut,
-} from "firebase/auth";
+import { OAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import { auth } from "../Config/firebaseConfig";
 
 // const signin = (email, password) => {
@@ -33,13 +28,13 @@ const signInWithApple = async (e) => {
   return signInWithPopup(auth, provider);
 };
 
-const signInWithGoogle = async (e) => {
-  const provider = await new GoogleAuthProvider();
-  return signInWithPopup(auth, provider);
-};
+// const signInWithGoogle = async (e) => {
+//   const provider = await new GoogleAuthProvider();
+//   return signInWithPopup(auth, provider);
+// };
 
 const signout = () => {
   signOut(auth);
 };
 
-export { signout, signInWithGoogle, signInWithApple };
+export { signout, signInWithApple };

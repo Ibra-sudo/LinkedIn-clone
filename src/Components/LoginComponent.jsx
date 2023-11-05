@@ -1,7 +1,10 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { signInWithGoogle, signInWithApple } from "../Api/firebaseAuth";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import {
+  signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 import { auth } from "../Config/firebaseConfig";
 
 import LinkedInLogo from "../assets/LinkedIn_logo.png";
@@ -9,9 +12,9 @@ import LinkedInLogoFooter from "../assets/linkedin-logo-black.png";
 import { AuthContext } from "../context/AuthContext";
 
 function LoginComponent() {
-  // const [credentials, setCredentials] = useState({});
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [value, setValue] = useState("");
   const [emailError, setEmailError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
   const navigate = useNavigate();
@@ -29,6 +32,41 @@ function LoginComponent() {
     return passwordRegex.test(password);
   };
 
+  // Google Login Function
+  const handelGoogleLogin = (e) => {
+    e.preventDefault();
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        setValue(result.user.email);
+        const name = result.user.displayName;
+        const image = result.user.photoURL;
+
+        localStorage.setItem("name", name);
+        localStorage.setItem("image", image);
+        dispatch({ type: "LOGIN", payload: result.user.email });
+        if (!provider) {
+          navigate("/");
+        } else {
+          navigate("/home");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    // const provider = await new GoogleAuthProvider();
+    // dispatch({ type: "LOGIN", payload: provider });
+    // if (!provider) {
+    //   navigate("/");
+    // } else {
+    //   navigate("/home");
+    // }
+
+    // return signInWithPopup(auth, provider);
+  };
+
+  // Login Function
   const handelLogin = (e) => {
     e.preventDefault();
 
@@ -52,24 +90,6 @@ function LoginComponent() {
         console.log("Login faild!");
       });
   };
-  // Signin function
-  // const signIn = () => {
-  //   try {
-  //     let res = signin(
-  //       credentials.email == credentials.email &&
-  //         credentials.password == credentials.password
-  //     );
-  //     if (res) {
-  //       navigate("/home");
-  //       console.log("Signin successful!");
-  //     } else {
-  //       console.log("Signin faild!");
-  //       alert("Signin failed!");
-  //     }
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // };
   return (
     <>
       <div className="content-container">
@@ -181,7 +201,7 @@ function LoginComponent() {
                 to={{ pathname: "/home" }}
               > */}
                 <button
-                  onClick={signInWithGoogle}
+                  onClick={handelGoogleLogin}
                   type="submit"
                   className="btn btn-outline-secondary rounded-pill fw-light"
                   style={{ height: "2.6rem" }}

@@ -1,6 +1,9 @@
 import React, { useContext, useState } from "react";
-import { signInWithGoogle } from "../Api/firebaseAuth";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 import { auth } from "../Config/firebaseConfig";
 
 import { Link, useNavigate } from "react-router-dom";
@@ -10,9 +13,9 @@ import LinkedInLogoFooter from "../assets/linkedin-logo-black.png";
 import { AuthContext } from "../context/AuthContext";
 
 function SignupComponent() {
-  // const [credentials, setCredentials] = useState({});
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [value, setValue] = useState("");
   const [emailError, setEmailError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
   const navigate = useNavigate();
@@ -30,6 +33,35 @@ function SignupComponent() {
     return passwordRegex.test(password);
   };
 
+  // Google Signup Function
+  const handelGoogleSignup = async (e) => {
+    e.preventDefault();
+
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        setValue(result.user.email);
+        dispatch({ type: "LOGIN", payload: result.user.email });
+        if (!provider) {
+          navigate("/");
+        } else {
+          navigate("/home");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    // const provider = await new GoogleAuthProvider();
+    // dispatch({ type: "LOGIN", payload: provider });
+    // if (!provider) {
+    //   navigate("/");
+    // } else {
+    //   navigate("/home");
+    // }
+    // return signInWithPopup(auth, provider);
+  };
+
   // Signup function
   const handelSignup = (e) => {
     e.preventDefault();
@@ -43,11 +75,10 @@ function SignupComponent() {
         console.log("Signup successful!");
       })
       .catch((error) => {
-        // setEmailError(true);
         if (!validateEmail(email)) {
           setEmailError(true);
         }
-        // setPasswordError(true);
+
         if (!validatePassword(password)) {
           setPasswordError(true);
         }
@@ -55,31 +86,6 @@ function SignupComponent() {
       });
   };
 
-  // const signUp = (event) => {
-  //   event.preventDefault();
-  //   setEmailError("");
-  //   setPasswordError("");
-  //   if (!validateEmail(credentials.email)) {
-  //     setEmailError("Invalid email format");
-  //   }
-
-  //   // if (!validatePassword(credentials.password)) {
-  //   //   setPasswordError("Password must be at least 6 characters long");
-  //   // }
-  //   try {
-  //     let res = signup(credentials.email, credentials.password);
-  //     if (credentials.email !== " " && credentials.password !== " ") {
-  //       navigate("/home");
-  //       console.log("Signup successful!");
-  //       // alert("Signup successful!");
-  //     } else {
-  //       console.log("Signup faild!");
-  //       // alert("Signup failed!");
-  //     }
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // };
   return (
     <>
       <div className="content-container">
@@ -205,7 +211,7 @@ function SignupComponent() {
               </div>
               <div className=" d-grid">
                 <button
-                  onClick={signInWithGoogle}
+                  onClick={handelGoogleSignup}
                   type="submit"
                   className="btn btn-outline-secondary rounded-pill fw-light"
                   style={{

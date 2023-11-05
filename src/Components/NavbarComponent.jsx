@@ -291,7 +291,12 @@ function NavbarComponent() {
                             height: "1.3rem",
                           }}
                         /> */}
-                      <img className="nav-user" src="/images/user.svg" alt="" />
+                      {/* src="/images/user.svg" */}
+                      <img
+                        className="nav-user"
+                        src={localStorage.getItem("image")}
+                        alt=""
+                      />
                     </div>
                     <span className="anchorLink nav-span">
                       Me
@@ -323,12 +328,12 @@ function NavbarComponent() {
                       <div>
                         <img
                           className="nav-user-dropdown mx-2"
-                          src="/images/user.svg"
+                          src={localStorage.getItem("image")}
                           alt=""
                         />
                       </div>
                       <div>
-                        <h5>Abdulrahman Ibrahim</h5>
+                        <h5>{localStorage.getItem("name")}</h5>
                         <p>
                           Software Engineering | Full-Stack Web-developer &
                           App-developer |
